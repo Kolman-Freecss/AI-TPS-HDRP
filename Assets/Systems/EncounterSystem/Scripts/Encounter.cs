@@ -34,11 +34,11 @@ public class Encounter : MonoBehaviour
 
         waves = GetComponentsInChildren<Wave>();
 
-        Enemy[] enemies = GetComponentsInChildren<Enemy>(true);
-        foreach (Enemy enemy in enemies)
-        {
-            enemy.target = target;
-        }
+        // Enemy[] enemies = GetComponentsInChildren<Enemy>(true);
+        // foreach (Enemy enemy in enemies)
+        // {
+        //     enemy.target = target;
+        // }
     }
 
     void StartEncounter()

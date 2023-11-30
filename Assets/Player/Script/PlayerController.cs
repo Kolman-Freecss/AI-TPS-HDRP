@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 #endregion
 
-public class PlayerController : MonoBehaviour, IEntityAnimable
+public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
 {
     public enum MovementMode
     {
@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour, IEntityAnimable
     [SerializeField] private InputActionReference[] selectWeaponInputs;
     [SerializeField] private InputActionReference shotInput;
     [SerializeField] private InputActionReference continuousShot;
+
+    [Header("IVisible Settings")] [SerializeField]
+    private string allegiance = "Player";
 
     CharacterController _characterController;
     EntityWeapons entityWeapons;
@@ -88,7 +91,7 @@ public class PlayerController : MonoBehaviour, IEntityAnimable
     private void UpdateWeapons()
     {
         Vector2 changeWeaponValue = changeWeapon.action.ReadValue<Vector2>();
-        Debug.Log(changeWeaponValue.y);
+        Debug.Log(changeWeaponValue.y + "   weapon");
         if (changeWeaponValue.y > 0f)
         {
             entityWeapons.SelectNextWeapon();
@@ -246,6 +249,20 @@ public class PlayerController : MonoBehaviour, IEntityAnimable
     public bool IsGrounded()
     {
         return _characterController.isGrounded;
+    }
+
+    #endregion
+
+    #region IVisible Implementation
+
+    public Transform GetTransform()
+    {
+        return transform;
+    }
+
+    public string GetAllegiance()
+    {
+        return allegiance;
     }
 
     #endregion
