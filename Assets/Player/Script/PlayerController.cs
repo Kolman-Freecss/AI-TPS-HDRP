@@ -207,6 +207,8 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
                 break;
         }
 
+        desiredDirection = Vector3.ProjectOnPlane(desiredDirection, Vector3.up);
+
         float angularDistance = Vector3.SignedAngle(transform.forward, desiredDirection, Vector3.up);
         float angleToApply = angularSpeed * Time.deltaTime;
         angleToApply = Mathf.Min(angleToApply, Mathf.Abs(angularDistance));

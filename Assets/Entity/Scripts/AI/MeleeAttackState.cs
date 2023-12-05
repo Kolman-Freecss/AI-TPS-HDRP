@@ -1,32 +1,36 @@
 #region
 
+using System;
+using Entity.Scripts.AI;
 using UnityEngine;
-using UnityEngine.AI;
 
 #endregion
 
-public class MeleeAttackState : MonoBehaviour
+public class MeleeAttackState : AIState
 {
-    [SerializeField] public Transform target;
     [SerializeField] private float attackDistance = 1f;
 
-    private NavMeshAgent agent;
-    private Animator animator;
 
-    private void Awake()
+    public override void Enter()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
+        throw new NotImplementedException();
     }
 
     void Update()
     {
-        Vector3 destination = target ? target.position : transform.position;
+        Vector3 destination = decissionMaker ? decissionMaker.transform.position : transform.position;
 
-        agent.SetDestination(destination);
+        navMeshAgent.SetDestination(destination);
 
         animator.SetBool(
             "isAttacking",
-            target ? Vector3.Distance(target.position, transform.position) < attackDistance : false);
+            decissionMaker
+                ? Vector3.Distance(decissionMaker.transform.position, transform.position) < attackDistance
+                : false);
+    }
+
+    public override void Exit()
+    {
+        throw new NotImplementedException();
     }
 }

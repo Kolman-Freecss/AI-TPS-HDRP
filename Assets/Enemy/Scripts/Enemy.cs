@@ -24,26 +24,6 @@ public class Enemy : MonoBehaviour, IEntityAnimable, IVisible
         meleeAttackState = GetComponent<MeleeAttackState>();
     }
 
-    void Update()
-    {
-        Transform target = entitySight.visiblesInSight.Find((x) => x.GetAllegiance() != GetAllegiance())
-            ?.GetTransform();
-
-        if (target)
-        {
-            meleeAttackState.target = target;
-            meleeAttackState.enabled = true;
-            patrolState.enabled = false;
-            // SetState(meleeAttackState);
-        }
-        else
-        {
-            meleeAttackState.enabled = false;
-            patrolState.enabled = true;
-            // SetState(patrolState);
-        }
-    }
-
     #region IEntityAnimable Implementation
 
     public Vector3 GetLastVelocity()

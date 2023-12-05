@@ -1,11 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+#region
+
 using UnityEngine;
+
+#endregion
 
 public class EntityWeapons : MonoBehaviour
 {
     [SerializeField] private Transform weaponsParent;
+    [SerializeField] private int startingWeaponIndex = 0;
 
     Weapon[] weapons;
     private int currentWeapon = -1;
@@ -15,12 +17,12 @@ public class EntityWeapons : MonoBehaviour
         weapons = weaponsParent.GetComponentsInChildren<Weapon>();
         currentWeapon = weapons.Length > 0 ? 0 : -1;
 
-        SetCurrentWeapon(currentWeapon);
+        SetCurrentWeapon(startingWeaponIndex);
     }
 
     internal void SelectNextWeapon()
     {
-        int nextWeapon = currentWeapon++;
+        int nextWeapon = ++currentWeapon;
         if (nextWeapon >= weapons.Length)
         {
             nextWeapon = 0;
@@ -31,7 +33,7 @@ public class EntityWeapons : MonoBehaviour
 
     internal void SelectPreviousWeapon()
     {
-        int prevWeapon = currentWeapon++;
+        int prevWeapon = --currentWeapon;
         if (prevWeapon < weapons.Length)
         {
             prevWeapon = weapons.Length - 1;

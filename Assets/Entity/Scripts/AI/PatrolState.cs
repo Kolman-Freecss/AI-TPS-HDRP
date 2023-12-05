@@ -1,21 +1,20 @@
 #region
 
+using Entity.Scripts.AI;
 using UnityEngine;
-using UnityEngine.AI;
 
 #endregion
 
-public class PatrolState : MonoBehaviour
+public class PatrolState : AIState
 {
     [SerializeField] Transform patrolPointsParent;
     [SerializeField] float reachingDistance = 1f;
 
-    private NavMeshAgent navMeshAgent;
     private int currentPoint;
 
-    private void Awake()
+    public override void Enter()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        // no - op
     }
 
     private void Update()
@@ -30,5 +29,10 @@ public class PatrolState : MonoBehaviour
                 currentPoint = 0;
             }
         }
+    }
+
+    public override void Exit()
+    {
+        // no - op
     }
 }

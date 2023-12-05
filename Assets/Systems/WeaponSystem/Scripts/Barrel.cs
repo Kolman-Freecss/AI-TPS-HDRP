@@ -10,22 +10,22 @@ public abstract class Barrel : MonoBehaviour
 
     [Header("Debug")] [SerializeField] private bool debugContinuousShot;
 
-    void OnValidate()
-    {
-        if (debugShot)
-        {
-            debugShot = false;
-            Shot();
-        }
-        
-        if (debugContinuousShot)
-        {
-            StartShooting();
-        } else 
-        {
-            StopShooting();
-        }
-    }
+    // void OnValidate()
+    // {
+    //     if (debugShot)
+    //     {
+    //         debugShot = false;
+    //         Shot();
+    //     }
+    //     
+    //     if (debugContinuousShot)
+    //     {
+    //         StartShooting();
+    //     } else 
+    //     {
+    //         StopShooting();
+    //     }
+    // }
 
     public virtual void Shot()
     {
