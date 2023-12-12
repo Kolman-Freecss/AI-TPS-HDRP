@@ -39,3 +39,5 @@ W
 'Assets/Entity/Scripts/Senses/Audible.cs,2\6\269f9d8cb21abe57e9eff7a9e021ec851aa372eb
 U
 %Assets/Entity/Scripts/AI/IdleState.cs,c\d\cdd13a25781491204f63fd887b0aa9111a5ba267
+[
++Assets/Player/Script/FPSCameraController.cs,9\6\965c6a61256b7382c43ed0d7c142dc997e8a13b7

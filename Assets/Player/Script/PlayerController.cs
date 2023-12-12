@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
     {
         OrientateToCameraForward,
         OrientateToMovementForward,
-        OrientateToTarget
+        OrientateToTarget,
+        DoNotOrientate
     };
 
     [Header("Movement Settings")] [SerializeField]
@@ -189,6 +190,11 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
 
     private void UpdateOrientation()
     {
+        if (orientationMode == OrientationMode.DoNotOrientate)
+        {
+            return;
+        }
+
         Vector3 desiredDirection = Vector3.zero;
         switch (orientationMode)
         {
