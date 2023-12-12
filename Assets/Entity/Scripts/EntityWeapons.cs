@@ -14,10 +14,16 @@ public class EntityWeapons : MonoBehaviour
 
     private void Awake()
     {
-        weapons = weaponsParent.GetComponentsInChildren<Weapon>();
-        currentWeapon = weapons.Length > 0 ? 0 : -1;
-
-        SetCurrentWeapon(startingWeaponIndex);
+        if (weaponsParent != null)
+        {
+            weapons = weaponsParent.GetComponentsInChildren<Weapon>();
+            currentWeapon = weapons.Length > 0 ? 0 : -1;
+            SetCurrentWeapon(startingWeaponIndex);
+        }
+        else
+        {
+            Debug.LogWarning("No weapons parent found for " + gameObject.name);
+        }
     }
 
     internal void SelectNextWeapon()

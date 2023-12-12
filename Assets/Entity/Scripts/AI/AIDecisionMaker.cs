@@ -26,7 +26,10 @@ namespace Entity.Scripts.AI
         [SerializeField] private AIState startState;
 
         EntitySight entitySight;
+        EntityAudition entityAudition;
         EntityWeapons entityWeapons;
+
+        IdleState idleState;
         MeleeAttackState meleeAttackState;
         PatrolState patrolState;
         SeekingState seekingState;
@@ -44,11 +47,15 @@ namespace Entity.Scripts.AI
         private void Awake()
         {
             aiStates = GetComponents<AIState>();
+
+            entityWeapons = GetComponent<EntityWeapons>();
+            entitySight = GetComponentInChildren<EntitySight>();
+            entityAudition = GetComponentInChildren<EntityAudition>();
+
+            idleState = GetComponent<IdleState>();
             meleeAttackState = GetComponent<MeleeAttackState>();
             patrolState = GetComponent<PatrolState>();
-            entitySight = GetComponentInChildren<EntitySight>();
             seekingState = GetComponent<SeekingState>();
-            entityWeapons = GetComponent<EntityWeapons>();
             shootingState = GetComponent<ShootingState>();
             valiantState = GetComponent<ValiantState>();
             lookingInLastPerceivedPosition = GetComponent<LookingInLastPerceivedPosition>();
@@ -73,11 +80,39 @@ namespace Entity.Scripts.AI
 
         void Update()
         {
-            Transform target = entitySight.visiblesInSight.Find((x) => x.GetAllegiance() != GetAllegiance())
+            Transform visibleTarget = entitySight.visiblesInSight.Find((x) => x.GetAllegiance() != GetAllegiance())
                 ?.GetTransform();
+
+            Transform audibleTarget = rangedEnemyType == RangedEnemyType.Ambushers
+                ? null
+                : entityAudition.heardAudibles.Find(
+                        (x) => x.GetAllegiance() != GetAllegiance())
+                    ?.audible.transform;
+
+            target = null;
+            if (!visibleTarget)
+            {
+                target = audibleTarget;
+            }
+            else if (audibleTarget)
+            {
+                target = Vector3.Distance(visibleTarget.position, transform.position) <
+                         Vector3.Distance(audibleTarget.position, transform.position)
+                    ? visibleTarget
+                    : audibleTarget;
+            }
+            else
+            {
+                target = visibleTarget;
+            }
 
             if (target)
             {
+                if (rangedEnemyType != RangedEnemyType.Ambushers)
+                {
+                    rangedEnemyType = RangedEnemyType.Valiants;
+                }
+
                 lastPerceivedPosition = target.position;
                 hasLastPerceivedPosition = rangedEnemyType != RangedEnemyType.Guardian;
                 if (entityWeapons && rangedEnemyType != RangedEnemyType.NonRanged)
@@ -114,6 +149,10 @@ namespace Entity.Scripts.AI
             {
                 lookingInLastPerceivedPosition.lastPerceivedPosition = lastPerceivedPosition;
                 SetState(lookingInLastPerceivedPosition);
+            }
+            else if (rangedEnemyType == RangedEnemyType.Ambushers)
+            {
+                SetState(idleState);
             }
             else
             {

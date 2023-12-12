@@ -1,6 +1,4 @@
 
-Vcsharpsquid:S3903
-"-Move 'EntityAudition' into a named namespace.(‡Ù˜¥ıÿÿÿÿ8¨ûÜÛÃ1
-Ocsharpsquid:S11688"+Return an empty collection instead of null.(÷–æ«8À€ÿÛÃ1
-csharpsquid:S25830"fChange this condition so that it does not always evaluate to 'False'. Some code paths are unreachable.(í‰¦Ğÿÿÿÿÿ8ÂĞ´ÜÃ1
-Ncsharpsquid:S1481"%Remove the unused local variable 'i'.(ùó›Ìøÿÿÿÿ8¤ÜäÛÃ1
+Ocsharpsquid:S1168="+Return an empty collection instead of null.(÷–æ«8À€ÿÛÃ1
+csharpsquid:S25835"fChange this condition so that it does not always evaluate to 'False'. Some code paths are unreachable.(í‰¦Ğÿÿÿÿÿ8ÂĞ´ÜÃ1
+Ncsharpsquid:S1481"%Remove the unused local variable 'i'.(ùó›Ìøÿÿÿÿ8¤ÜäÛÃ1

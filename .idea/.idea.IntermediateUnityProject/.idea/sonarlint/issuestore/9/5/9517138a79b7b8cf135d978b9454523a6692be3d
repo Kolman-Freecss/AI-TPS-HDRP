@@ -1,4 +1,4 @@
 
-{csharpsquid:S3776J"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(®±®“üÿÿÿÿ8ÁóùÚÃ1
-Tcsharpsquid:S2259Q"0'target' is null on at least one execution path.(™ÓÇÚ8ÑÜŠÛÃ1
-`csharpsquid:S1117L"<Rename 'target' which hides the property with the same name.(‰×Şš8„…¹ÚÃ1
+{csharpsquid:S3776Q"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(®±®“üÿÿÿÿ8ÁóùÚÃ1
+[csharpsquid:S2259c"7'visibleTarget' is null on at least one execution path.(ª—ğ8½ë»ëÅ1
+`csharpsquid:S2259d"7'audibleTarget' is null on at least one execution path.(¦Ø‘Şúÿÿÿÿ8½ë»ëÅ1

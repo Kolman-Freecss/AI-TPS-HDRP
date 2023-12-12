@@ -13,7 +13,12 @@ public class EntityAudition : MonoBehaviour
     public class AudibleHeard
     {
         public Audible audible;
-        public float timeLeftToForget;
+        public float timeLeftToForget = 5f;
+
+        public string GetAllegiance()
+        {
+            return audible.GetAllegiance();
+        }
     }
 
     public List<AudibleHeard> heardAudibles = new();

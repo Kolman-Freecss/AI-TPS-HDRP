@@ -35,7 +35,7 @@ X
 (Assets/Entity/Scripts/AI/ValiantState.cs,f\5\f5d78f3407e927ec96a7104975ab226be8402017
 ^
 .Assets/Entity/Scripts/Senses/EntityAudition.cs,b\8\b8c8c96b8f8a0382047005dac9114723684a7aae
-\
-,Assets/Entity/Scripts/Senses/NoiseEmitter.cs,7\2\72fbb78d81f453c2e94738c7eee193c54822a1d2
 W
 'Assets/Entity/Scripts/Senses/Audible.cs,2\6\269f9d8cb21abe57e9eff7a9e021ec851aa372eb
+U
+%Assets/Entity/Scripts/AI/IdleState.cs,c\d\cdd13a25781491204f63fd887b0aa9111a5ba267
