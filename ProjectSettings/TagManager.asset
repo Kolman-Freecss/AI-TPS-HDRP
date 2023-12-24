@@ -35,8 +35,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - CombatZoneDetector
+  - CombatZone
   - EncounterLimits
   m_SortingLayers:
   - name: Default

@@ -31,7 +31,7 @@ public class FPSCameraController : MonoBehaviour
         }
         else if (currentAngle + rotationToApply < -maxVerticalAngle)
         {
-            fpsCameraPivot.Rotate(Vector3.right, currentAngle - maxVerticalAngle);
+            fpsCameraPivot.Rotate(Vector3.right, -(currentAngle + maxVerticalAngle));
         }
         else
         {

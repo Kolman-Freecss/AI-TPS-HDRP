@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
     private void UpdateWeapons()
     {
         Vector2 changeWeaponValue = changeWeapon.action.ReadValue<Vector2>();
-        Debug.Log(changeWeaponValue.y + "   weapon");
         if (changeWeaponValue.y > 0f)
         {
             entityWeapons.SelectNextWeapon();

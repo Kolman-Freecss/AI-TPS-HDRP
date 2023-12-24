@@ -80,6 +80,7 @@ namespace Entity.Scripts.AI
 
         void Update()
         {
+            // Choose target
             Transform visibleTarget = entitySight.visiblesInSight.Find((x) => x.GetAllegiance() != GetAllegiance())
                 ?.GetTransform();
 
@@ -106,6 +107,14 @@ namespace Entity.Scripts.AI
                 target = visibleTarget;
             }
 
+            // Can see target? Can hear target?
+            bool canSeeTarget = entitySight.visiblesInSight.Find(
+                (x) => x.GetTransform() == target) != null;
+
+            bool canHearTarget = entityAudition.heardAudibles.Find(
+                (x) => x.audible.transform == target) != null;
+
+            // Make decission
             if (target)
             {
                 if (rangedEnemyType != RangedEnemyType.Ambushers)
@@ -117,15 +126,18 @@ namespace Entity.Scripts.AI
                 hasLastPerceivedPosition = rangedEnemyType != RangedEnemyType.Guardian;
                 if (entityWeapons && rangedEnemyType != RangedEnemyType.NonRanged)
                 {
-                    if (Vector3.Distance(target.position, transform.position) < shootRange)
+                    if (canSeeTarget)
                     {
-                        if (rangedEnemyType == RangedEnemyType.Valiants)
+                        if (Vector3.Distance(target.position, transform.position) < shootRange)
                         {
-                            SetState(valiantState);
-                        }
-                        else
-                        {
-                            SetState(shootingState);
+                            if (rangedEnemyType == RangedEnemyType.Valiants)
+                            {
+                                SetState(valiantState);
+                            }
+                            else
+                            {
+                                SetState(shootingState);
+                            }
                         }
                     }
                     else
