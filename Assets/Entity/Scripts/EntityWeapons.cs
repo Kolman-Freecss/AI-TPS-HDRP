@@ -9,6 +9,12 @@ public class EntityWeapons : MonoBehaviour
     [SerializeField] private Transform weaponsParent;
     [SerializeField] private int startingWeaponIndex = 0;
 
+    [Header("IK Constraints Settings")] [SerializeField]
+    private Transform leftHandIKTarget;
+
+    [SerializeField] private Transform rightHandIKTarget;
+    [SerializeField] private Transform leftHintIKTarget;
+
     Weapon[] weapons;
     private int currentWeapon = -1;
 
@@ -24,6 +30,31 @@ public class EntityWeapons : MonoBehaviour
         {
             Debug.LogWarning("No weapons parent found for " + gameObject.name);
         }
+    }
+
+    private void LateUpdate()
+    {
+        SetIKTargets();
+    }
+
+    private void SetIKTargets()
+    {
+        // if (currentWeapon != -1)
+        // {
+        //     Weapon currentWeapon = weapons[this.currentWeapon];
+        //     if (currentWeapon.LeftHandWeaponIKTarget != null)
+        //         SetIKTarget(leftHandIKTarget, currentWeapon.LeftHandWeaponIKTarget);
+        //     if (currentWeapon.RightHandWeaponIKTarget != null)
+        //         SetIKTarget(rightHandIKTarget, currentWeapon.RightHandWeaponIKTarget);
+        //     if (currentWeapon.LeftHintWeaponIKTarget != null)
+        //         SetIKTarget(leftHintIKTarget, currentWeapon.LeftHintWeaponIKTarget);
+        // }
+        //
+        // void SetIKTarget(Transform ikConstraint, Transform weaponTarget)
+        // {
+        //     ikConstraint.position = weaponTarget.position;
+        //     ikConstraint.rotation = weaponTarget.rotation;
+        // }
     }
 
     internal void SelectNextWeapon()

@@ -1,7 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+#region
+
 using UnityEngine;
+
+#endregion
 
 public class Weapon : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class Weapon : MonoBehaviour
     };
 
     public ShotMode shotMode;
+
+    [Header("IK Constraints Settings")] [SerializeField]
+    private Transform leftHandWeaponIKTarget;
+
+    [SerializeField] private Transform rightHandWeaponIKTarget;
+    [SerializeField] private Transform leftHintWeaponIKTarget;
 
     Barrel[] barrels;
 
@@ -43,4 +50,12 @@ public class Weapon : MonoBehaviour
             barrel.StopShooting();
         }
     }
+
+    #region Getters & Setters
+
+    public Transform LeftHandWeaponIKTarget => leftHandWeaponIKTarget;
+    public Transform RightHandWeaponIKTarget => rightHandWeaponIKTarget;
+    public Transform LeftHintWeaponIKTarget => leftHintWeaponIKTarget;
+
+    #endregion
 }
