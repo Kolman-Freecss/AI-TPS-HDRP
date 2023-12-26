@@ -23,7 +23,7 @@ public class FPSCameraController : MonoBehaviour
         Vector2 aimDelta = aim.action.ReadValue<Vector2>();
         transform.Rotate(Vector3.up, aimDelta.x * horizontalAngularSpeed * Time.deltaTime);
 
-        float currentAngle = Vector3.SignedAngle(Vector3.forward, fpsCameraPivot.forward, Vector3.right);
+        float currentAngle = Vector3.SignedAngle(transform.forward, fpsCameraPivot.forward, transform.right);
         float rotationToApply = aimDelta.y * verticalAngularSpeed * Time.deltaTime;
         if (currentAngle + rotationToApply > maxVerticalAngle)
         {
