@@ -39,22 +39,22 @@ public class EntityWeapons : MonoBehaviour
 
     private void SetIKTargets()
     {
-        // if (currentWeapon != -1)
-        // {
-        //     Weapon currentWeapon = weapons[this.currentWeapon];
-        //     if (currentWeapon.LeftHandWeaponIKTarget != null)
-        //         SetIKTarget(leftHandIKTarget, currentWeapon.LeftHandWeaponIKTarget);
-        //     if (currentWeapon.RightHandWeaponIKTarget != null)
-        //         SetIKTarget(rightHandIKTarget, currentWeapon.RightHandWeaponIKTarget);
-        //     if (currentWeapon.LeftHintWeaponIKTarget != null)
-        //         SetIKTarget(leftHintIKTarget, currentWeapon.LeftHintWeaponIKTarget);
-        // }
-        //
-        // void SetIKTarget(Transform ikConstraint, Transform weaponTarget)
-        // {
-        //     ikConstraint.position = weaponTarget.position;
-        //     ikConstraint.rotation = weaponTarget.rotation;
-        // }
+        if (currentWeapon != -1)
+        {
+            Weapon currentWeapon = weapons[this.currentWeapon];
+            if (currentWeapon.LeftHandWeaponIKTarget != null)
+                SetIKTarget(leftHandIKTarget, currentWeapon.LeftHandWeaponIKTarget);
+            if (currentWeapon.RightHandWeaponIKTarget != null)
+                SetIKTarget(rightHandIKTarget, currentWeapon.RightHandWeaponIKTarget);
+            if (currentWeapon.LeftHintWeaponIKTarget != null)
+                SetIKTarget(leftHintIKTarget, currentWeapon.LeftHintWeaponIKTarget);
+        }
+
+        void SetIKTarget(Transform ikConstraint, Transform weaponTarget)
+        {
+            ikConstraint.position = weaponTarget.position;
+            ikConstraint.rotation = weaponTarget.rotation;
+        }
     }
 
     internal void SelectNextWeapon()
