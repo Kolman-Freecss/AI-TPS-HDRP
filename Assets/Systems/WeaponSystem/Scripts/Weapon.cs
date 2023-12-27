@@ -21,11 +21,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform leftHintWeaponIKTarget;
     [SerializeField] private Transform rightHintWeaponIKTarget;
 
+    protected Animator animator;
     Barrel[] barrels;
 
     private void Awake()
     {
         barrels = GetComponentsInChildren<Barrel>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void Shot()
@@ -59,6 +61,8 @@ public class Weapon : MonoBehaviour
     public Transform LeftHintWeaponIKTarget => leftHintWeaponIKTarget;
 
     public Transform RightHintWeaponIKTarget => rightHintWeaponIKTarget;
+
+    public Animator Animator => animator;
 
     #endregion
 }

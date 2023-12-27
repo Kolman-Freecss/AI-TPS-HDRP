@@ -4446,7 +4446,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1486253062}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 2135592032}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 916427845}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 892922170}
@@ -4544,7 +4544,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 994833212}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 5135434366550319686}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 41769334}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 602082801}
@@ -4726,7 +4726,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 33999335}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 1305685278}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1053897376}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1183340237}
@@ -4918,7 +4918,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1545021345}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 1484784029}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 889020655}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 2114091822}
@@ -5016,7 +5016,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 218120877}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 166763934}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 138833336}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1008276969}
@@ -5114,7 +5114,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1507398157}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 633041789}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1513490586}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1997018149}
@@ -5212,7 +5212,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1398613278}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 1752256306}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1068164524}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 850272638}
@@ -5310,7 +5310,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1347638041}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 1111428941}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1333893900}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 335872433}
@@ -5408,7 +5408,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 710556696}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 1451870762}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 261438049}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1099736240}
@@ -5506,7 +5506,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1463349598}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 1635078437}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1705982254}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1120873097}
@@ -5604,7 +5604,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1674183800}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
   - _gameObject: {fileID: 113131587}
-    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
+    _prefab: Assets/3rdPartyAssets/Packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 136521005}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1342640555}
@@ -17348,6 +17348,7 @@ MonoBehaviour:
   m_Script: {fileID: 1945632353}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &1396630342
 Transform:
   m_ObjectHideFlags: 19
@@ -26731,32 +26732,32 @@ PrefabInstance:
     - target: {fileID: 4602213789458977629, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4602213789458977629, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4602213789458977629, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
@@ -26821,7 +26822,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3789085991716456935, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5135434366550319687}
   m_SourcePrefab: {fileID: 100100000, guid: 06ad55c2e2d7c32438a04f07a462735d, type: 3}
 --- !u!1 &5135434366550319686 stripped
 GameObject:
@@ -26829,6 +26834,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5135434366550319685}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &5135434366550319687
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5135434366550319686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93411dc4bdb1cb6499dccea0afd69140, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &7719717404617970293
 PrefabInstance:
   m_ObjectHideFlags: 0
