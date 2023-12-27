@@ -38,7 +38,10 @@ public abstract class Barrel : MonoBehaviour
     {
         // weapon.PlayShotSound();
         if (weapon.Animator != null)
+        {
+            Debug.Log("Shot animation");
             weapon.Animator.SetTrigger("Shoot");
+        }
     }
 
     public virtual void StartShooting()
