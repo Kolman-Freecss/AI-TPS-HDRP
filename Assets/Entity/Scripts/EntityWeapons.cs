@@ -14,6 +14,7 @@ public class EntityWeapons : MonoBehaviour
 
     [SerializeField] private Transform rightHandIKTarget;
     [SerializeField] private Transform leftHintIKTarget;
+    [SerializeField] private Transform rightHintIKTarget;
 
     Weapon[] weapons;
     private int currentWeapon = -1;
@@ -48,6 +49,8 @@ public class EntityWeapons : MonoBehaviour
                 SetIKTarget(rightHandIKTarget, currentWeapon.RightHandWeaponIKTarget);
             if (currentWeapon.LeftHintWeaponIKTarget != null)
                 SetIKTarget(leftHintIKTarget, currentWeapon.LeftHintWeaponIKTarget);
+            if (currentWeapon.RightHintWeaponIKTarget != null)
+                SetIKTarget(rightHintIKTarget, currentWeapon.RightHintWeaponIKTarget);
         }
 
         void SetIKTarget(Transform ikConstraint, Transform weaponTarget)

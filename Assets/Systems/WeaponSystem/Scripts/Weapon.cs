@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private Transform rightHandWeaponIKTarget;
     [SerializeField] private Transform leftHintWeaponIKTarget;
+    [SerializeField] private Transform rightHintWeaponIKTarget;
 
     Barrel[] barrels;
 
@@ -56,6 +57,8 @@ public class Weapon : MonoBehaviour
     public Transform LeftHandWeaponIKTarget => leftHandWeaponIKTarget;
     public Transform RightHandWeaponIKTarget => rightHandWeaponIKTarget;
     public Transform LeftHintWeaponIKTarget => leftHintWeaponIKTarget;
+
+    public Transform RightHintWeaponIKTarget => rightHintWeaponIKTarget;
 
     #endregion
 }
