@@ -1376,6 +1376,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 113131585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &113131587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 113131585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &113399108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 798012749721759725, guid: ce14c101f64e15c43b153cee3c9606f0,
@@ -2224,6 +2230,12 @@ PrefabInstance:
 --- !u!4 &166763933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 949323946017694459, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 166763932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &166763934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
     type: 3}
   m_PrefabInstance: {fileID: 166763932}
   m_PrefabAsset: {fileID: 0}
@@ -4433,6 +4445,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 1486253062}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 2135592032}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 916427845}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 892922170}
@@ -4529,6 +4543,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 994833212}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 5135434366550319686}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 41769334}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 602082801}
@@ -4709,6 +4725,8 @@ MonoBehaviour:
     _prefab: Assets/!Commons!/LifeBar/Prefabs/LifeBar.prefab
   - _gameObject: {fileID: 33999335}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 1305685278}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1053897376}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1183340237}
@@ -4899,6 +4917,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 1545021345}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 1484784029}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 889020655}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 2114091822}
@@ -4995,6 +5015,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 218120877}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 166763934}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 138833336}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1008276969}
@@ -5091,6 +5113,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 1507398157}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 633041789}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1513490586}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1997018149}
@@ -5187,6 +5211,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 1398613278}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 1752256306}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1068164524}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 850272638}
@@ -5283,6 +5309,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 1347638041}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 1111428941}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1333893900}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 335872433}
@@ -5379,6 +5407,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 710556696}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 1451870762}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 261438049}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1099736240}
@@ -5475,6 +5505,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 1463349598}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 1635078437}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 1705982254}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1120873097}
@@ -5571,6 +5603,8 @@ MonoBehaviour:
     _prefab: Assets/Systems/WeaponSystem/!!Pieces/Prefabs/BarrelByInstantiation.prefab
   - _gameObject: {fileID: 1674183800}
     _prefab: Assets/Systems/WeaponSystem/!Weapons/Uzi/Prefabs/UZI.prefab
+  - _gameObject: {fileID: 113131587}
+    _prefab: Assets/3rdAssetPacks/packages/ps1psx-mini-uzi/source/uzi_sketchfab.fbx
   - _gameObject: {fileID: 136521005}
     _prefab: Assets/AssetPacks/Low Poly Guns/Models/Guns/smg2/smg2.fbx
   - _gameObject: {fileID: 1342640555}
@@ -8357,6 +8391,12 @@ PrefabInstance:
 --- !u!4 &633041788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 949323946017694459, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 633041787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &633041789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
     type: 3}
   m_PrefabInstance: {fileID: 633041787}
   m_PrefabAsset: {fileID: 0}
@@ -14288,6 +14328,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1111428939}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1111428941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1111428939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1113011885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1662380136608831722, guid: ce14c101f64e15c43b153cee3c9606f0,
@@ -16427,6 +16473,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62a370263a52441439c79e9866f00725, type: 3}
+--- !u!1 &1305685278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8304480990890364235, guid: 62a370263a52441439c79e9866f00725,
+    type: 3}
+  m_PrefabInstance: {fileID: 1305685277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1308345098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6089133220707367039, guid: ce14c101f64e15c43b153cee3c9606f0,
@@ -18199,6 +18251,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1451870760}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1451870762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1451870760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1461343412 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 715119603843632771, guid: ce14c101f64e15c43b153cee3c9606f0,
@@ -18576,6 +18634,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce14c101f64e15c43b153cee3c9606f0, type: 3}
+--- !u!1 &1484784029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1484784028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1485561901 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2723566126380560955, guid: ce14c101f64e15c43b153cee3c9606f0,
@@ -20849,6 +20913,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1635078435}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1635078437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1635078435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1639387729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6554885259904307843, guid: ce14c101f64e15c43b153cee3c9606f0,
@@ -22043,6 +22113,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1752256304}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1752256306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1752256304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752991499 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3106703008854471621, guid: e7b7b1fed929ac748a28032a22a0a6e2,
@@ -22656,7 +22732,7 @@ Transform:
   m_GameObject: {fileID: 1823688464}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -7.464, y: 1.36, z: -2.077}
+  m_LocalPosition: {x: -7.4900002, y: 1.6340001, z: -2.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24886,7 +24962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1994810459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26333,6 +26409,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce14c101f64e15c43b153cee3c9606f0, type: 3}
+--- !u!1 &2135592032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547736153469172911, guid: ce14c101f64e15c43b153cee3c9606f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135592031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137140727 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6415400271576345830, guid: 06ad55c2e2d7c32438a04f07a462735d,
@@ -26641,31 +26723,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1835582380307653435, guid: 06ad55c2e2d7c32438a04f07a462735d,
-        type: 3}
-      propertyPath: leftHandWeaponIKTarget
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835582380307653435, guid: 06ad55c2e2d7c32438a04f07a462735d,
-        type: 3}
-      propertyPath: leftHintWeaponIKTarget
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835582380307653435, guid: 06ad55c2e2d7c32438a04f07a462735d,
-        type: 3}
-      propertyPath: rightHandWeaponIKTarget
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835582380307653435, guid: 06ad55c2e2d7c32438a04f07a462735d,
-        type: 3}
-      propertyPath: rightHintWeaponIKTarget
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2206324990668716403, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: debugOffender
       value: 
       objectReference: {fileID: 1953004199}
+    - target: {fileID: 4602213789458977629, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602213789458977629, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602213789458977629, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284040008411054008, guid: 06ad55c2e2d7c32438a04f07a462735d,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6415400271576345830, guid: 06ad55c2e2d7c32438a04f07a462735d,
         type: 3}
       propertyPath: m_Name
@@ -26726,6 +26823,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ad55c2e2d7c32438a04f07a462735d, type: 3}
+--- !u!1 &5135434366550319686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3789085991716456935, guid: 06ad55c2e2d7c32438a04f07a462735d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5135434366550319685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7719717404617970293
 PrefabInstance:
   m_ObjectHideFlags: 0
