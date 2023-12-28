@@ -47,14 +47,16 @@ public abstract class Barrel : MonoBehaviour
 
     protected void CantShoot()
     {
-        if (!weapon.IsReloading())
+        Debug.Log("Cant shoot");
+        if (weapon.IsReloading())
         {
-            return;
+            Debug.Log("Cant shoot, reloading");
         }
-
-        if (weapon.IsCurrentAmmoEmpty())
+        else if (weapon.IsCurrentAmmoEmpty())
         {
-            weapon.Reload();
+            //TODO: Make this a setting
+            //weapon.Reload();
+            weapon.PlayEmptyClipSound();
         }
     }
 

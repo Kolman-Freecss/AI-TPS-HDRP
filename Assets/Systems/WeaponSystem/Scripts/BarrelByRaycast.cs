@@ -45,15 +45,17 @@ public class BarrelByRaycast : Barrel
 
     public override void Shot()
     {
-        if (!weapon.CanShot())
-        {
-            base.CantShoot();
-        }
-
         if (Time.time > nextShotTime && !shooting)
         {
             nextShotTime = Time.time + 1f / cadence;
             shooting = true;
+            if (!weapon.CanShot())
+            {
+                base.CantShoot();
+                shooting = false;
+                return;
+            }
+
             base.Shot();
             Vector3 dispersedForward = DispersedForward();
             Vector3 finalShotPosition = shootPoint.position + (dispersedForward.normalized * range);

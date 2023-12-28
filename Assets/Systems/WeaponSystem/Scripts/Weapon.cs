@@ -25,6 +25,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int timeToReload;
 
     [SerializeField] private AudioClip shootAudioClip;
+    [SerializeField] private AudioClip reloadAudioClip;
+    [SerializeField] private AudioClip emptyClipAudioClip;
 
     [Header("IK Constraints Settings")] [SerializeField]
     private Transform leftHandWeaponIKTarget;
@@ -50,7 +52,24 @@ public class Weapon : MonoBehaviour
 
     public void PlayShotSound()
     {
+        if (audioSource == null || shootAudioClip == null)
+        {
+            Debug.LogWarning("No audio source found for " + gameObject.name);
+            return;
+        }
+
         audioSource.PlayOneShot(shootAudioClip);
+    }
+
+    public void PlayEmptyClipSound()
+    {
+        if (audioSource == null || emptyClipAudioClip == null)
+        {
+            Debug.LogWarning("No audio source found for " + gameObject.name);
+            return;
+        }
+
+        audioSource.PlayOneShot(emptyClipAudioClip);
     }
 
     public void Shot()
@@ -95,6 +114,11 @@ public class Weapon : MonoBehaviour
             if (animator != null)
             {
                 animator.SetTrigger("Reload");
+            }
+
+            if (audioSource != null && reloadAudioClip != null)
+            {
+                audioSource.PlayOneShot(reloadAudioClip);
             }
 
             int ammoToReload = ammoInClipCapacity - ammoCount;

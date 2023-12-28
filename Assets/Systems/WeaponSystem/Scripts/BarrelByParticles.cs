@@ -18,6 +18,7 @@ public class BarrelByParticles : Barrel
         if (!weapon.CanShot())
         {
             base.CantShoot();
+            return;
         }
 
         emission.enabled = false;

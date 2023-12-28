@@ -14,6 +14,7 @@ public class BarrelByInstantiation : Barrel
         if (!weapon.CanShot())
         {
             base.CantShoot();
+            return;
         }
 
         Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
