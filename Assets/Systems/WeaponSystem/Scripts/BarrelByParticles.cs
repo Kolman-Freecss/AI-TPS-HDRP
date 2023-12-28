@@ -1,8 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+#region
+
 using UnityEngine;
-using UnityEngine.Serialization;
+
+#endregion
 
 public class BarrelByParticles : Barrel
 {
@@ -15,6 +15,11 @@ public class BarrelByParticles : Barrel
 
     private void Start()
     {
+        if (!weapon.CanShot())
+        {
+            base.CantShoot();
+        }
+
         emission.enabled = false;
     }
 

@@ -19,7 +19,7 @@ public class EntityWeapons : MonoBehaviour
     Weapon[] weapons;
     private int currentWeapon = -1;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if (weaponsParent != null)
         {
@@ -90,6 +90,14 @@ public class EntityWeapons : MonoBehaviour
         }
 
         currentWeapon = selectedWeapon;
+    }
+
+    public virtual void Reload()
+    {
+        if (currentWeapon != -1)
+        {
+            weapons[currentWeapon].Reload();
+        }
     }
 
     public void Shot()

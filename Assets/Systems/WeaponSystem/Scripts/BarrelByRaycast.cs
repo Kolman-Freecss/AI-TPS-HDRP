@@ -45,6 +45,11 @@ public class BarrelByRaycast : Barrel
 
     public override void Shot()
     {
+        if (!weapon.CanShot())
+        {
+            base.CantShoot();
+        }
+
         if (Time.time > nextShotTime && !shooting)
         {
             nextShotTime = Time.time + 1f / cadence;

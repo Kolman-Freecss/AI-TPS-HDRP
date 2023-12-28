@@ -36,11 +36,25 @@ public abstract class Barrel : MonoBehaviour
 
     public virtual void Shot()
     {
-        // weapon.PlayShotSound();
+        weapon.DecreaseCurrentAmmo(1);
+        weapon.PlayShotSound();
         if (weapon.Animator != null)
         {
             Debug.Log("Shot animation");
             weapon.Animator.SetTrigger("Shoot");
+        }
+    }
+
+    protected void CantShoot()
+    {
+        if (!weapon.IsReloading())
+        {
+            return;
+        }
+
+        if (weapon.IsCurrentAmmoEmpty())
+        {
+            weapon.Reload();
         }
     }
 
