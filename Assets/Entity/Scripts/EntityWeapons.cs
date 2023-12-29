@@ -87,6 +87,7 @@ public class EntityWeapons : MonoBehaviour
         for (int j = 0; j < weapons.Length; j++)
         {
             weapons[j].gameObject.SetActive(j == selectedWeapon);
+            weapons[j].gameObject.GetComponent<Weapon>().active = j == selectedWeapon;
         }
 
         currentWeapon = selectedWeapon;

@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2958409295340147405}
   - component: {fileID: 5569171020674161563}
   - component: {fileID: 548301648136402363}
+  - component: {fileID: 4420439612918285185}
   m_Layer: 0
   m_Name: UZI
   m_TagString: Untagged
@@ -160,6 +161,9 @@ MonoBehaviour:
   ammoClips: 0
   timeToReload: 0
   shootAudioClip: {fileID: 8300000, guid: e0b0af66d43ddc249a16b7e26289eab1, type: 3}
+  reloadAudioClip: {fileID: 0}
+  emptyClipAudioClip: {fileID: 0}
+  bulletPrefab: {fileID: 0}
   leftHandWeaponIKTarget: {fileID: 522666618985387140}
   rightHandWeaponIKTarget: {fileID: 6848308607198499780}
   leftHintWeaponIKTarget: {fileID: 4771236047009695879}
@@ -282,6 +286,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4420439612918285185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256696086655980339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fec87addff84c2780178f77f93620ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2942740849265864963
 GameObject:
   m_ObjectHideFlags: 0

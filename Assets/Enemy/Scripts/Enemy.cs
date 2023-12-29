@@ -8,6 +8,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, IEntityAnimable, IVisible
 {
+    [SerializeField] private Transform leftHand;
+
     [SerializeField] string allegiance = "Enemy";
 
     private NavMeshAgent agent;
@@ -44,6 +46,11 @@ public class Enemy : MonoBehaviour, IEntityAnimable, IVisible
     public bool IsGrounded()
     {
         return true;
+    }
+
+    public Transform GetLeftHand()
+    {
+        return leftHand;
     }
 
     #endregion

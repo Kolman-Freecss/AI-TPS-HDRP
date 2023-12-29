@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
         DoNotOrientate
     };
 
+    [Header("Player Body")] [SerializeField]
+    private Transform playerLeftHand;
+
     [Header("Movement Settings")] [SerializeField]
     private float planeSpeed = 3f; // m/s
 
@@ -256,6 +259,11 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
     public bool IsGrounded()
     {
         return _characterController.isGrounded;
+    }
+
+    public Transform GetLeftHand()
+    {
+        return playerLeftHand;
     }
 
     #endregion

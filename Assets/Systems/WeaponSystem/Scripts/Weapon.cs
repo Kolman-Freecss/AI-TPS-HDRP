@@ -1,6 +1,7 @@
 #region
 
 using System.Collections;
+using _3rdPartyAssets.Packages.KolmanFreecss.Scripts;
 using UnityEngine;
 
 #endregion
@@ -27,7 +28,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private AudioClip shootAudioClip;
     [SerializeField] private AudioClip reloadAudioClip;
     [SerializeField] private AudioClip emptyClipAudioClip;
+    [SerializeField] private AudioClip magazineDropAudioClip;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject magazineWeapon;
 
     [Header("IK Constraints Settings")] [SerializeField]
     private Transform leftHandWeaponIKTarget;
@@ -36,17 +39,37 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform leftHintWeaponIKTarget;
     [SerializeField] private Transform rightHintWeaponIKTarget;
 
+    #region Member Variables
+
     protected Animator animator;
     Barrel[] barrels;
 
     private bool isReloading = false;
     private AudioSource audioSource;
+    private WeaponAnimationEvent weaponAnimationEvent;
+    [HideInInspector] public bool active = false;
+
+    private GameObject magazineHand;
+
+    //TODO: Remove this dependency
+    [SerializeField] private PlayerController entityAnimable;
+
+    #endregion
 
     private void Awake()
     {
         barrels = GetComponentsInChildren<Barrel>();
         animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
+        weaponAnimationEvent = GetComponent<WeaponAnimationEvent>();
+    }
+
+    private void Start()
+    {
+        if (weaponAnimationEvent != null)
+        {
+            weaponAnimationEvent.animationEvent.AddListener(OnWeaponAnimationEvent);
+        }
     }
 
     #region Shot Logic
@@ -106,6 +129,59 @@ public class Weapon : MonoBehaviour
 
 
     #region Ammo Logic
+
+    private void OnWeaponAnimationEvent(string eventName)
+    {
+        if (!active) return;
+        switch (eventName)
+        {
+            case "detach_magazine":
+                DetachMagazine();
+                break;
+            case "drop_magazine":
+                DropMagazine();
+                break;
+            case "refill_magazine":
+                RefillMagazine();
+                break;
+            case "attach_magazine":
+                AttachMagazine();
+                break;
+        }
+
+        void DetachMagazine()
+        {
+            magazineHand = Instantiate(magazineWeapon, entityAnimable.GetLeftHand(), true);
+            magazineWeapon.SetActive(false);
+        }
+
+        void DropMagazine()
+        {
+            GameObject droppedMagazine = Instantiate(magazineHand, magazineHand.transform.position,
+                magazineHand.transform.rotation);
+            droppedMagazine.AddComponent<Rigidbody>();
+            droppedMagazine.AddComponent<BoxCollider>();
+            AudioSource localAudioSource = droppedMagazine.AddComponent<AudioSource>();
+            SoundOnCollision s = droppedMagazine.AddComponent<SoundOnCollision>();
+            s.collisionSound = magazineDropAudioClip;
+            s.audioSource = localAudioSource;
+            droppedMagazine.SetActive(true);
+            // s.audioSource.outputAudioMixerGroup = SoundManager.Instance.EffectsAudioMixerGroup;
+            Destroy(droppedMagazine, 5f);
+            magazineHand.SetActive(false);
+        }
+
+        void RefillMagazine()
+        {
+            magazineHand.SetActive(true);
+        }
+
+        void AttachMagazine()
+        {
+            magazineWeapon.SetActive(true);
+            Destroy(magazineHand);
+        }
+    }
 
     public void Reload()
     {
@@ -198,6 +274,14 @@ public class Weapon : MonoBehaviour
     }
 
     #endregion
+
+    private void OnDisable()
+    {
+        if (weaponAnimationEvent != null)
+        {
+            weaponAnimationEvent.animationEvent.RemoveListener(OnWeaponAnimationEvent);
+        }
+    }
 
 
     #region Getters & Setters
