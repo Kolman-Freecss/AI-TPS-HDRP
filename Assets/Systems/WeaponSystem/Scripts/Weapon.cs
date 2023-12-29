@@ -27,6 +27,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private AudioClip shootAudioClip;
     [SerializeField] private AudioClip reloadAudioClip;
     [SerializeField] private AudioClip emptyClipAudioClip;
+    [SerializeField] private GameObject bulletPrefab;
 
     [Header("IK Constraints Settings")] [SerializeField]
     private Transform leftHandWeaponIKTarget;
@@ -216,6 +217,8 @@ public class Weapon : MonoBehaviour
     public int AmmoClips => ammoClips;
 
     public AudioSource AudioSource => audioSource;
+
+    public GameObject BulletPrefab => bulletPrefab;
 
     #endregion
 }
