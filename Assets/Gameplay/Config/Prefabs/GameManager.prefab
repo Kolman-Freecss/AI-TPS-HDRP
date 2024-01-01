@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4513905933622491325}
-  - component: {fileID: 3863394663952717941}
+  - component: {fileID: 6146801418146518131}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3863394663952717941
+--- !u!114 &6146801418146518131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254787212120742084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7924a96cebf7e73439215d11055ae84f, type: 3}
+  m_Script: {fileID: 11500000, guid: 736e5a495c2cfcd4aacdf09e8030fc94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   timeToFinishGame: 5
-  m_GameFinalDialogue: {fileID: 11400000, guid: 84aa6662aca158a44b9b46592c4fd9c5,
-    type: 2}
+  m_GameFinalDialogue: {fileID: 0}
   m_player: {fileID: 0}
   m_GameWon: 0
   gamePaused: 0

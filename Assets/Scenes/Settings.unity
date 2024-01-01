@@ -760,9 +760,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Return
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1498,9 +1497,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ambient  volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1918,6 +1916,55 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &965888202
+GameObject:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965888204}
+  - component: {fileID: 965888203}
+  m_Layer: 0
+  m_Name: Prefab Indexer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965888203
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965888202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a7c62fccbafd342991629222351294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scenePrefabInstances:
+  - _gameObject: {fileID: 7578236124644595884}
+    _prefab: Assets/3rdPartyAssets/Packages/KolmanFreecss/Scripts/Config/Prefabs/UI/SettingsUIManager.prefab
+  - _gameObject: {fileID: 1692436009}
+    _prefab: Assets/Gameplay/{Utilities}/Prefabs/ConfigScene.prefab
+--- !u!4 &965888204
+Transform:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965888202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003358646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,9 +2024,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Effects volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2257,9 +2303,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3252,6 +3297,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1692436007}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1692436009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2043265167771920181, guid: 0acaccab109b74f46841edb8b4f6d5dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1692436007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1804330860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,9 +3362,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Master Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3709,6 +3759,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 398285478}
     m_Modifications:
+    - target: {fileID: 1358612017783501673, guid: 170c4562b5745e74a8937c28b5bb0167,
+        type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 852420270}
+    - target: {fileID: 1358612017783501673, guid: 170c4562b5745e74a8937c28b5bb0167,
+        type: 3}
+      propertyPath: m_MusicVolumeSlider
+      value: 
+      objectReference: {fileID: 169715283}
+    - target: {fileID: 1358612017783501673, guid: 170c4562b5745e74a8937c28b5bb0167,
+        type: 3}
+      propertyPath: m_MasterVolumeSlider
+      value: 
+      objectReference: {fileID: 209118183}
+    - target: {fileID: 1358612017783501673, guid: 170c4562b5745e74a8937c28b5bb0167,
+        type: 3}
+      propertyPath: m_EffectsVolumeSlider
+      value: 
+      objectReference: {fileID: 203544952}
     - target: {fileID: 1713400086861129929, guid: 170c4562b5745e74a8937c28b5bb0167,
         type: 3}
       propertyPath: m_Name
@@ -3789,6 +3859,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170c4562b5745e74a8937c28b5bb0167, type: 3}
+--- !u!1 &7578236124644595884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1713400086861129929, guid: 170c4562b5745e74a8937c28b5bb0167,
+    type: 3}
+  m_PrefabInstance: {fileID: 7578236124644595883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3803,3 +3879,4 @@ SceneRoots:
   - {fileID: 1164026595}
   - {fileID: 1184010572}
   - {fileID: 426603864}
+  - {fileID: 965888204}

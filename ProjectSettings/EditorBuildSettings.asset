@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LoadingScreen/Scenes/LoadingScreen.unity
-    guid: 2cfe9b3159a434b46ae29e5570699122
+    path: Assets/Scenes/InitBootstrap.unity
+    guid: 2f22c95e1fdfa8047949e88865107d38
   - enabled: 1
-    path: Assets/Scenes/InGame/InGame_Main.unity
+    path: Assets/Scenes/Home.unity
+    guid: 03a6073eb6d2c8d4587bb6446de13fef
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 7f2cc0568649e384b977c470feea4865
+  - enabled: 1
+    path: Assets/Scenes/InGame/InGameInit.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
   - enabled: 1
-    path: Assets/OutdoorsSceneRed.unity
-    guid: e4ba0d5b4a34ad241bda515f7415d21c
+    path: Assets/Scenes/Credits.unity
+    guid: 7a5e74827a8b3644fa67436a218f5c45
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: ed82d12abf3ee5545a80616020458943
   m_configObjects: {}

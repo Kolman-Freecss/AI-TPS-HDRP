@@ -182,9 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Sergio Mart\xEDnez Rom\xE1n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -317,9 +316,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SOUND ARTIST
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -590,6 +588,12 @@ PrefabInstance:
 --- !u!4 &451769207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8502027070407031561, guid: 0acaccab109b74f46841edb8b4f6d5dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 451769206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &451769208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2043265167771920181, guid: 0acaccab109b74f46841edb8b4f6d5dd,
     type: 3}
   m_PrefabInstance: {fileID: 451769206}
   m_PrefabAsset: {fileID: 0}
@@ -1035,9 +1039,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: General PM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1170,9 +1173,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Project managers
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1633,9 +1635,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Artists
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1768,9 +1769,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Sergio Mart\xEDnez Rom\xE1n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1903,9 +1903,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2038,9 +2037,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Sergio Mart\xEDnez Rom\xE1n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2390,9 +2388,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Sergio Mart\xEDnez Rom\xE1n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2525,9 +2522,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAMEPLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2788,9 +2784,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PROGRAMMERS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3011,9 +3006,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Sergio Mart\xEDnez Rom\xE1n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3146,9 +3140,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEVEL DESIGN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3377,9 +3370,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Return
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3453,6 +3445,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964279583}
   m_CullTransparentMesh: 1
+--- !u!1 &1974087837
+GameObject:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974087839}
+  - component: {fileID: 1974087838}
+  m_Layer: 0
+  m_Name: Prefab Indexer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1974087838
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974087837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a7c62fccbafd342991629222351294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scenePrefabInstances:
+  - _gameObject: {fileID: 8177154751953130859}
+    _prefab: Assets/3rdPartyAssets/Packages/KolmanFreecss/Scripts/Config/Prefabs/UI/CreditsUIManager.prefab
+  - _gameObject: {fileID: 451769208}
+    _prefab: Assets/Gameplay/{Utilities}/Prefabs/ConfigScene.prefab
+--- !u!4 &1974087839
+Transform:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974087837}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977693068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,9 +3553,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3D ARTIST
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b60f95f3a2835494ba19a49e999b44d2, type: 2}
-  m_sharedMaterial: {fileID: -466885322316925189, guid: b60f95f3a2835494ba19a49e999b44d2,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3743,6 +3783,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6639231103418121778, guid: 6dcfe5e1da5605c4296c29a318aa4e1e,
+        type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 816270315}
     - target: {fileID: 7225388171952435281, guid: 6dcfe5e1da5605c4296c29a318aa4e1e,
         type: 3}
       propertyPath: m_Name
@@ -3758,6 +3803,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dcfe5e1da5605c4296c29a318aa4e1e, type: 3}
+--- !u!1 &8177154751953130859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7225388171952435281, guid: 6dcfe5e1da5605c4296c29a318aa4e1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8177154751953130858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3770,3 +3821,4 @@ SceneRoots:
   - {fileID: 647832742}
   - {fileID: 2089767048}
   - {fileID: 1325106248}
+  - {fileID: 1974087839}

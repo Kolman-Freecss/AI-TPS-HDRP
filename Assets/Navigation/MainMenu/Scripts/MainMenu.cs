@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private Button otherSceneButton;
 
-    [SerializeField] private int otherSceneIndex;
+    [SerializeField] private SceneTransitionHandler.SceneStates otherSceneIndex;
 
 
     void OnEnable()
@@ -48,6 +48,6 @@ public class MainMenu : MonoBehaviour
 
     void OnLoadOtherScene()
     {
-        LoadingScreen.Instance.LoadScene(otherSceneIndex);
+        SceneTransitionHandler.Instance.LoadScene(otherSceneIndex, true);
     }
 }
