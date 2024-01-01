@@ -11,7 +11,7 @@ public class Encounter : MonoBehaviour
     [SerializeField] private Transform encounterDoorsParent;
     [SerializeField] private Transform encounterLimitsParent;
 
-    [SerializeField] UnityEvent onEncounterFinished;
+    [SerializeField] public UnityEvent onEncounterFinished;
 
     Wave[] waves;
     private int currentWave = 0;

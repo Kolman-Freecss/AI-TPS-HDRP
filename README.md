@@ -11,6 +11,7 @@ FPS (First person shooter) built with Unity HDRP pipeline.
 - [Requirements](#requirements)
     - [Editor version](#editor-version)
 - [Installation steps](#installation-steps)
+- [Notes](#notes)
 
 ## Requirements:
 
@@ -22,6 +23,11 @@ FPS (First person shooter) built with Unity HDRP pipeline.
 - Clone this repo
 - Import all the packages from Unity Asset Store inside the AssetPacks folder
     - Check the manifest.json file to see the packages used
+
+## Notes
+
+- Several systems are on a private repo, so they are not included in this repo. 
+- Some assets are not included in this repo, due to licensing issues.
 
 
 ---
