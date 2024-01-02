@@ -17,9 +17,7 @@ public class LookingInLastPerceivedPosition : AIState
     private void Update()
     {
         navMeshAgent.SetDestination(lastPerceivedPosition);
-        if (Vector3.Distance(lastPerceivedPosition, lastPerceivedPosition) < reachingDistance)
-        {
+        if (Vector3.Distance(lastPerceivedPosition, transform.position) < reachingDistance)
             onLastPerceivedPositionReached.Invoke();
-        }
     }
 }

@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     #region Member Variables
 
     protected Animator animator;
-    Barrel[] barrels;
+    private Barrel[] barrels;
 
     private bool isReloading = false;
     private AudioSource audioSource;
@@ -67,10 +67,7 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        if (weaponAnimationEvent != null)
-        {
-            weaponAnimationEvent.animationEvent.AddListener(OnWeaponAnimationEvent);
-        }
+        if (weaponAnimationEvent != null) weaponAnimationEvent.animationEvent.AddListener(OnWeaponAnimationEvent);
     }
 
     #region Shot Logic
@@ -99,26 +96,17 @@ public class Weapon : MonoBehaviour
 
     public void Shot()
     {
-        foreach (Barrel barrel in barrels)
-        {
-            barrel.Shot();
-        }
+        foreach (Barrel barrel in barrels) barrel.Shot();
     }
 
     public void StartShooting()
     {
-        foreach (Barrel barrel in barrels)
-        {
-            barrel.StartShooting();
-        }
+        foreach (Barrel barrel in barrels) barrel.StartShooting();
     }
 
     public void StopShooting()
     {
-        foreach (Barrel barrel in barrels)
-        {
-            barrel.StopShooting();
-        }
+        foreach (Barrel barrel in barrels) barrel.StopShooting();
     }
 
     public bool CanShot()
@@ -189,15 +177,9 @@ public class Weapon : MonoBehaviour
         if (CanReload())
         {
             isReloading = true;
-            if (animator != null)
-            {
-                animator.SetTrigger("Reload");
-            }
+            if (animator != null) animator.SetTrigger("Reload");
 
-            if (audioSource != null && reloadAudioClip != null)
-            {
-                audioSource.PlayOneShot(reloadAudioClip);
-            }
+            if (audioSource != null && reloadAudioClip != null) audioSource.PlayOneShot(reloadAudioClip);
 
             int ammoToReload = ammoInClipCapacity - ammoCount;
             ReduceCurrentAmmoClip();
@@ -249,6 +231,11 @@ public class Weapon : MonoBehaviour
         return HasAmmoClips() && !IsAmmoFull() && !IsReloading();
     }
 
+    public bool HasAmmoOrAmmoClips()
+    {
+        return HasAmmo() || HasAmmoClips();
+    }
+
     public bool IsAmmoFull()
     {
         return ammoCount == ammoInClipCapacity;
@@ -278,10 +265,7 @@ public class Weapon : MonoBehaviour
 
     private void OnDisable()
     {
-        if (weaponAnimationEvent != null)
-        {
-            weaponAnimationEvent.animationEvent.RemoveListener(OnWeaponAnimationEvent);
-        }
+        if (weaponAnimationEvent != null) weaponAnimationEvent.animationEvent.RemoveListener(OnWeaponAnimationEvent);
     }
 
 

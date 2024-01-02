@@ -6,8 +6,8 @@ using Entity.Scripts.AI;
 
 public class SeekingState : AIState
 {
-    void Update()
+    private void Update()
     {
-        navMeshAgent.SetDestination(decissionMaker.transform.position);
+        navMeshAgent.SetDestination(target.transform.position);
     }
 }

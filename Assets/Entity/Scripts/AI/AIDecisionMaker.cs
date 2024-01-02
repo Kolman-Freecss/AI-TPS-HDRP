@@ -10,11 +10,11 @@ namespace Entity.Scripts.AI
     {
         public enum RangedEnemyType
         {
-            NonRanged,
-            Valiants,
-            Cautious,
-            Ambushers,
-            Guardian
+            NonRanged, // They don't shoot
+            Valiants, // They move closer to the player
+            Cautious, // They move closer to the player but they don't move around
+            Ambushers, // They don't move until they see the player
+            Guardian // They don't move until they see the player, and they don't move around
         }
 
         [SerializeField] private RangedEnemyType rangedEnemyType = RangedEnemyType.NonRanged;
@@ -108,11 +108,11 @@ namespace Entity.Scripts.AI
             // Make decission
             if (target)
             {
-                if (rangedEnemyType != RangedEnemyType.Ambushers) rangedEnemyType = RangedEnemyType.Valiants;
+                if (rangedEnemyType == RangedEnemyType.Ambushers) rangedEnemyType = RangedEnemyType.Valiants;
 
                 lastPerceivedPosition = target.position;
                 hasLastPerceivedPosition = rangedEnemyType != RangedEnemyType.Guardian;
-                bool hasAmmo = entityWeapons ? entityWeapons.GetCurrentWeapon().HasAmmo() : false;
+                bool hasAmmo = entityWeapons ? entityWeapons.GetCurrentWeapon().HasAmmoOrAmmoClips() : false;
                 if (entityWeapons && rangedEnemyType != RangedEnemyType.NonRanged && hasAmmo)
                 {
                     if (canSeeTarget)
