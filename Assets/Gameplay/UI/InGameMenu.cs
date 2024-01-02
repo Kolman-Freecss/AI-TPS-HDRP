@@ -151,10 +151,12 @@ public class InGameMenu : MonoBehaviour
         canvas.gameObject.SetActive(m_isPaused);
         if (m_isPaused)
         {
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
         }
 

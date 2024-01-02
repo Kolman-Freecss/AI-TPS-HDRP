@@ -16,7 +16,7 @@ public class EntityWeapons : MonoBehaviour
     [SerializeField] private Transform leftHintIKTarget;
     [SerializeField] private Transform rightHintIKTarget;
 
-    Weapon[] weapons;
+    private Weapon[] weapons;
     private int currentWeapon = -1;
 
     protected virtual void Awake()
@@ -43,13 +43,13 @@ public class EntityWeapons : MonoBehaviour
         if (currentWeapon != -1)
         {
             Weapon currentWeapon = weapons[this.currentWeapon];
-            if (currentWeapon.LeftHandWeaponIKTarget != null)
+            if (currentWeapon.LeftHandWeaponIKTarget != null && leftHandIKTarget != null)
                 SetIKTarget(leftHandIKTarget, currentWeapon.LeftHandWeaponIKTarget);
-            if (currentWeapon.RightHandWeaponIKTarget != null)
+            if (currentWeapon.RightHandWeaponIKTarget != null && rightHandIKTarget != null)
                 SetIKTarget(rightHandIKTarget, currentWeapon.RightHandWeaponIKTarget);
-            if (currentWeapon.LeftHintWeaponIKTarget != null)
+            if (currentWeapon.LeftHintWeaponIKTarget != null && leftHintIKTarget != null)
                 SetIKTarget(leftHintIKTarget, currentWeapon.LeftHintWeaponIKTarget);
-            if (currentWeapon.RightHintWeaponIKTarget != null)
+            if (currentWeapon.RightHintWeaponIKTarget != null && rightHintIKTarget != null)
                 SetIKTarget(rightHintIKTarget, currentWeapon.RightHintWeaponIKTarget);
         }
 
@@ -63,10 +63,7 @@ public class EntityWeapons : MonoBehaviour
     internal void SelectNextWeapon()
     {
         int nextWeapon = ++currentWeapon;
-        if (nextWeapon >= weapons.Length)
-        {
-            nextWeapon = 0;
-        }
+        if (nextWeapon >= weapons.Length) nextWeapon = 0;
 
         SetCurrentWeapon(nextWeapon);
     }
@@ -74,10 +71,7 @@ public class EntityWeapons : MonoBehaviour
     internal void SelectPreviousWeapon()
     {
         int prevWeapon = --currentWeapon;
-        if (prevWeapon < weapons.Length)
-        {
-            prevWeapon = weapons.Length - 1;
-        }
+        if (prevWeapon < weapons.Length) prevWeapon = weapons.Length - 1;
 
         SetCurrentWeapon(prevWeapon);
     }
@@ -95,34 +89,22 @@ public class EntityWeapons : MonoBehaviour
 
     public virtual void Reload()
     {
-        if (currentWeapon != -1)
-        {
-            weapons[currentWeapon].Reload();
-        }
+        if (currentWeapon != -1) weapons[currentWeapon].Reload();
     }
 
     public void Shot()
     {
-        if (currentWeapon != -1)
-        {
-            weapons[currentWeapon].Shot();
-        }
+        if (currentWeapon != -1) weapons[currentWeapon].Shot();
     }
 
     public void StartShooting()
     {
-        if (currentWeapon != -1)
-        {
-            weapons[currentWeapon].StartShooting();
-        }
+        if (currentWeapon != -1) weapons[currentWeapon].StartShooting();
     }
 
     public void StopShooting()
     {
-        if (currentWeapon != -1)
-        {
-            weapons[currentWeapon].StopShooting();
-        }
+        if (currentWeapon != -1) weapons[currentWeapon].StopShooting();
     }
 
     public bool HasCurrentWeapon()

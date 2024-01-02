@@ -25,7 +25,6 @@ public class EntityAudition : MonoBehaviour
 
     private void Update()
     {
-        int i = 0;
         foreach (AudibleHeard ah in heardAudibles)
         {
             ah.timeLeftToForget -= Time.deltaTime;

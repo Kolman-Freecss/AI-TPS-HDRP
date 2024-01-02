@@ -260,7 +260,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 64291726041766371, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
+      propertyPath: m_TranslationAtRest.z
+      value: -0.11999987
+      objectReference: {fileID: 0}
+    - target: {fileID: 64291726041766371, guid: a2ba6710dcbf5074294df42507cb3deb,
+        type: 3}
       propertyPath: m_RotationOffsets.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64291726041766371, guid: a2ba6710dcbf5074294df42507cb3deb,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64291726041766371, guid: a2ba6710dcbf5074294df42507cb3deb,
@@ -268,6 +278,11 @@ PrefabInstance:
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 9193281664745541606}
+    - target: {fileID: 221658955460155264, guid: a2ba6710dcbf5074294df42507cb3deb,
+        type: 3}
+      propertyPath: entityAnimable
+      value: 
+      objectReference: {fileID: 6279709042900693036}
     - target: {fileID: 489210453247568082, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
       propertyPath: damage
@@ -311,7 +326,7 @@ PrefabInstance:
     - target: {fileID: 3758081468773994897, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.000000040978193
       objectReference: {fileID: 0}
     - target: {fileID: 3758081468773994897, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
@@ -321,7 +336,7 @@ PrefabInstance:
     - target: {fileID: 3758081468773994897, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.11999987
       objectReference: {fileID: 0}
     - target: {fileID: 3758081468773994897, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
@@ -588,6 +603,18 @@ MonoBehaviour:
   emissionFrequency: 5
   allegiance: Enemy
   speedThresholdToEmit: 1
+--- !u!114 &6279709042900693036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3741840861694011576, guid: e7b7b1fed929ac748a28032a22a0a6e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7263094993168324756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798012749721759725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da31e765335bd54c95ecc1255628bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9193281664745541606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1972201279848601458, guid: e7b7b1fed929ac748a28032a22a0a6e2,

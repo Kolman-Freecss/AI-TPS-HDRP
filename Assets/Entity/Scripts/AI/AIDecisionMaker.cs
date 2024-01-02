@@ -17,32 +17,32 @@ namespace Entity.Scripts.AI
             Guardian
         }
 
-        [SerializeField] RangedEnemyType rangedEnemyType = RangedEnemyType.NonRanged;
+        [SerializeField] private RangedEnemyType rangedEnemyType = RangedEnemyType.NonRanged;
 
-        [SerializeField] string allegiance = "Enemy";
+        [SerializeField] private string allegiance = "Enemy";
         [SerializeField] private float shootRange = 15f;
         [SerializeField] public float valiantRange = 5f;
 
         [SerializeField] private AIState startState;
 
-        EntitySight entitySight;
-        EntityAudition entityAudition;
-        EntityWeapons entityWeapons;
+        private EntitySight entitySight;
+        private EntityAudition entityAudition;
+        private EntityWeapons entityWeapons;
 
-        IdleState idleState;
-        MeleeAttackState meleeAttackState;
-        PatrolState patrolState;
-        SeekingState seekingState;
-        ShootingState shootingState;
-        ValiantState valiantState;
-        LookingInLastPerceivedPosition lookingInLastPerceivedPosition;
+        private IdleState idleState;
+        private MeleeAttackState meleeAttackState;
+        private PatrolState patrolState;
+        private SeekingState seekingState;
+        private ShootingState shootingState;
+        private ValiantState valiantState;
+        private LookingInLastPerceivedPosition lookingInLastPerceivedPosition;
 
-        AIState[] aiStates;
-        AIState currentState;
+        private AIState[] aiStates;
+        private AIState currentState;
 
         public Transform target { get; private set; }
-        Vector3 lastPerceivedPosition;
-        bool hasLastPerceivedPosition;
+        private Vector3 lastPerceivedPosition;
+        private bool hasLastPerceivedPosition;
 
         private void Awake()
         {
@@ -63,22 +63,19 @@ namespace Entity.Scripts.AI
             lookingInLastPerceivedPosition.onLastPerceivedPositionReached.AddListener(OnLastPerceivedPositionReached);
         }
 
-        void OnLastPerceivedPositionReached()
+        private void OnLastPerceivedPositionReached()
         {
             hasLastPerceivedPosition = false;
         }
 
         private void Start()
         {
-            foreach (AIState s in aiStates)
-            {
-                s.decissionMaker = this;
-            }
+            foreach (AIState s in aiStates) s.decissionMaker = this;
 
             SetState(startState);
         }
 
-        void Update()
+        private void Update()
         {
             // Choose target
             Transform visibleTarget = entitySight.visiblesInSight.Find((x) => x.GetAllegiance() != GetAllegiance())
@@ -92,20 +89,14 @@ namespace Entity.Scripts.AI
 
             target = null;
             if (!visibleTarget)
-            {
                 target = audibleTarget;
-            }
             else if (audibleTarget)
-            {
                 target = Vector3.Distance(visibleTarget.position, transform.position) <
                          Vector3.Distance(audibleTarget.position, transform.position)
                     ? visibleTarget
                     : audibleTarget;
-            }
             else
-            {
                 target = visibleTarget;
-            }
 
             // Can see target? Can hear target?
             bool canSeeTarget = entitySight.visiblesInSight.Find(
@@ -117,39 +108,29 @@ namespace Entity.Scripts.AI
             // Make decission
             if (target)
             {
-                if (rangedEnemyType != RangedEnemyType.Ambushers)
-                {
-                    rangedEnemyType = RangedEnemyType.Valiants;
-                }
+                if (rangedEnemyType != RangedEnemyType.Ambushers) rangedEnemyType = RangedEnemyType.Valiants;
 
                 lastPerceivedPosition = target.position;
                 hasLastPerceivedPosition = rangedEnemyType != RangedEnemyType.Guardian;
-                if (entityWeapons && rangedEnemyType != RangedEnemyType.NonRanged)
+                bool hasAmmo = entityWeapons ? entityWeapons.GetCurrentWeapon().HasAmmo() : false;
+                if (entityWeapons && rangedEnemyType != RangedEnemyType.NonRanged && hasAmmo)
                 {
                     if (canSeeTarget)
                     {
                         if (Vector3.Distance(target.position, transform.position) < shootRange)
                         {
                             if (rangedEnemyType == RangedEnemyType.Valiants)
-                            {
                                 SetState(valiantState);
-                            }
                             else
-                            {
                                 SetState(shootingState);
-                            }
                         }
                     }
                     else
                     {
                         if (rangedEnemyType == RangedEnemyType.Guardian)
-                        {
                             SetState(shootingState);
-                        }
                         else
-                        {
                             SetState(seekingState);
-                        }
                     }
                 }
                 else
@@ -178,17 +159,16 @@ namespace Entity.Scripts.AI
             {
                 currentState?.Exit();
                 foreach (AIState s in aiStates)
-                {
                     if (s == newState)
                     {
                         s.enabled = true;
+                        s.target = target;
                         s.Enter();
                     }
                     else
                     {
                         s.enabled = false;
                     }
-                }
 
                 currentState = newState;
             }

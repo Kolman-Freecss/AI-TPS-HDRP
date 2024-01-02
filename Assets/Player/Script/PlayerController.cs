@@ -1,12 +1,12 @@
 #region
 
-using Entity.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using CharacterController = _3rdPartyAssets.Packages.KolmanFreecss.Systems.CharacterController.CharacterController;
 
 #endregion
 
-public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
+public class PlayerController : CharacterController
 {
     public enum MovementMode
     {
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
     [SerializeField] private float jumpSpeed = 5f; // m/s
 
     [Header("Orientation Settings")] [SerializeField]
-    float angularSpeed = 360f;
+    private float angularSpeed = 360f;
 
     [SerializeField] private Transform orientationTarget;
     [SerializeField] private OrientationMode orientationMode = OrientationMode.OrientateToMovementForward;
@@ -53,14 +53,14 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
     [Header("IVisible Settings")] [SerializeField]
     private string allegiance = "Player";
 
-    CharacterController _characterController;
-    EntityWeapons entityWeapons;
+    private UnityEngine.CharacterController _characterController;
+    private EntityWeapons entityWeapons;
     private float verticalVelocity = 0f;
     private Vector3 velocityToApply = Vector3.zero; // World
 
     private void Awake()
     {
-        _characterController = GetComponent<CharacterController>();
+        _characterController = GetComponent<UnityEngine.CharacterController>();
         entityWeapons = GetComponent<EntityWeapons>();
     }
 
@@ -69,20 +69,17 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
         move.action.Enable();
         jump.action.Enable();
         changeWeapon.action.Enable();
-        foreach (InputActionReference selectWeaponInput in selectWeaponInputs)
-        {
-            selectWeaponInput.action.Enable();
-        }
+        foreach (var selectWeaponInput in selectWeaponInputs) selectWeaponInput.action.Enable();
 
         shotInput.action.Enable();
         continuousShot.action.Enable();
     }
 
-    void Start()
+    private void Start()
     {
     }
 
-    void Update()
+    private void Update()
     {
         velocityToApply = Vector3.zero;
         UpdateMovementOnPlane();
@@ -94,55 +91,35 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
 
     private void UpdateWeapons()
     {
-        Vector2 changeWeaponValue = changeWeapon.action.ReadValue<Vector2>();
+        var changeWeaponValue = changeWeapon.action.ReadValue<Vector2>();
         if (changeWeaponValue.y > 0f)
-        {
             entityWeapons.SelectNextWeapon();
-        }
-        else if (changeWeaponValue.y < 0f)
-        {
-            entityWeapons.SelectPreviousWeapon();
-        }
+        else if (changeWeaponValue.y < 0f) entityWeapons.SelectPreviousWeapon();
 
-        for (int i = 0; i < selectWeaponInputs.Length; i++)
-        {
+        for (var i = 0; i < selectWeaponInputs.Length; i++)
             if (selectWeaponInputs[i].action.WasPerformedThisFrame())
-            {
                 entityWeapons.SetCurrentWeapon(i);
-            }
-        }
 
         if (entityWeapons.HasCurrentWeapon())
-        {
             switch (entityWeapons.GetCurrentWeapon().shotMode)
             {
                 case Weapon.ShotMode.ShotByShot:
-                    if (shotInput.action.WasPerformedThisFrame())
-                    {
-                        entityWeapons.Shot();
-                    }
+                    if (shotInput.action.WasPerformedThisFrame()) entityWeapons.Shot();
 
                     break;
                 case Weapon.ShotMode.Continuous:
-                    if (continuousShot.action.WasPressedThisFrame())
-                    {
-                        entityWeapons.StartShooting();
-                    }
+                    if (continuousShot.action.WasPressedThisFrame()) entityWeapons.StartShooting();
 
-                    if (continuousShot.action.WasReleasedThisFrame())
-                    {
-                        entityWeapons.StopShooting();
-                    }
+                    if (continuousShot.action.WasReleasedThisFrame()) entityWeapons.StopShooting();
 
                     break;
             }
-        }
     }
 
     private void UpdateMovementOnPlane()
     {
-        Vector2 rawMoveValue = move.action.ReadValue<Vector2>();
-        Vector3 xzMoveValue = (Vector3.right * rawMoveValue.x) + (Vector3.forward * rawMoveValue.y);
+        var rawMoveValue = move.action.ReadValue<Vector2>();
+        var xzMoveValue = Vector3.right * rawMoveValue.x + Vector3.forward * rawMoveValue.y;
 
         switch (movementMode)
         {
@@ -156,58 +133,46 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
 
         void UpdateMovementRelativeToCamera(Vector3 xzMoveValue)
         {
-            Transform cameraTransform = Camera.main.transform;
-            Vector3 xzMoveValueFromCamera = cameraTransform.TransformDirection(xzMoveValue);
-            float originalMagnitude = xzMoveValueFromCamera.magnitude;
+            var cameraTransform = Camera.main.transform;
+            var xzMoveValueFromCamera = cameraTransform.TransformDirection(xzMoveValue);
+            var originalMagnitude = xzMoveValueFromCamera.magnitude;
             xzMoveValueFromCamera = Vector3.ProjectOnPlane(xzMoveValueFromCamera, Vector3.up).normalized *
                                     originalMagnitude;
-            Vector3 velocity = xzMoveValueFromCamera * planeSpeed;
+            var velocity = xzMoveValueFromCamera * planeSpeed;
             velocityToApply += velocity;
         }
 
         void UpdateMovementRelativeToCharacter(Vector3 xzMoveValue)
         {
-            Vector3 velocity = xzMoveValue * planeSpeed;
+            var velocity = xzMoveValue * planeSpeed;
             velocityToApply += velocity;
         }
     }
 
     private void UpdateVerticalMovement()
     {
-        if (_characterController.isGrounded)
-        {
-            verticalVelocity = 0f;
-        }
+        if (_characterController.isGrounded) verticalVelocity = 0f;
 
         verticalVelocity += gravity * Time.deltaTime;
 
-        bool mustJump = jump.action.WasPerformedThisFrame();
-        if (mustJump && _characterController.isGrounded)
-        {
-            verticalVelocity = jumpSpeed;
-        }
+        var mustJump = jump.action.WasPerformedThisFrame();
+        if (mustJump && _characterController.isGrounded) verticalVelocity = jumpSpeed;
 
         velocityToApply += Vector3.up * verticalVelocity;
     }
 
     private void UpdateOrientation()
     {
-        if (orientationMode == OrientationMode.DoNotOrientate)
-        {
-            return;
-        }
+        if (orientationMode == OrientationMode.DoNotOrientate) return;
 
-        Vector3 desiredDirection = Vector3.zero;
+        var desiredDirection = Vector3.zero;
         switch (orientationMode)
         {
             case OrientationMode.OrientateToCameraForward:
                 desiredDirection = Camera.main.transform.forward;
                 break;
             case OrientationMode.OrientateToMovementForward:
-                if (velocityToApply.sqrMagnitude > 0f)
-                {
-                    desiredDirection = velocityToApply.normalized;
-                }
+                if (velocityToApply.sqrMagnitude > 0f) desiredDirection = velocityToApply.normalized;
 
                 break;
             case OrientationMode.OrientateToTarget:
@@ -217,11 +182,11 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
 
         desiredDirection = Vector3.ProjectOnPlane(desiredDirection, Vector3.up);
 
-        float angularDistance = Vector3.SignedAngle(transform.forward, desiredDirection, Vector3.up);
-        float angleToApply = angularSpeed * Time.deltaTime;
+        var angularDistance = Vector3.SignedAngle(transform.forward, desiredDirection, Vector3.up);
+        var angleToApply = angularSpeed * Time.deltaTime;
         angleToApply = Mathf.Min(angleToApply, Mathf.Abs(angularDistance));
         angleToApply *= Mathf.Sign(angularDistance);
-        Quaternion rotationToApply = Quaternion.AngleAxis(angleToApply, Vector3.up);
+        var rotationToApply = Quaternion.AngleAxis(angleToApply, Vector3.up);
         transform.rotation = transform.rotation * rotationToApply;
     }
 
@@ -230,10 +195,7 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
         move.action.Disable();
         jump.action.Disable();
         changeWeapon.action.Disable();
-        foreach (InputActionReference selectWeaponInput in selectWeaponInputs)
-        {
-            selectWeaponInput.action.Disable();
-        }
+        foreach (var selectWeaponInput in selectWeaponInputs) selectWeaponInput.action.Disable();
 
         shotInput.action.Disable();
         continuousShot.action.Disable();
@@ -241,27 +203,27 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
 
     #region IEntityAnimable Implementation
 
-    public Vector3 GetLastVelocity()
+    public override Vector3 GetLastVelocity()
     {
         return velocityToApply;
     }
 
-    public float GetVerticalVelocity()
+    public override float GetVerticalVelocity()
     {
         return verticalVelocity;
     }
 
-    public float GetJumpSpeed()
+    public override float GetJumpSpeed()
     {
         return jumpSpeed;
     }
 
-    public bool IsGrounded()
+    public override bool IsGrounded()
     {
         return _characterController.isGrounded;
     }
 
-    public Transform GetLeftHand()
+    public override Transform GetLeftHand()
     {
         return playerLeftHand;
     }
@@ -270,12 +232,12 @@ public class PlayerController : MonoBehaviour, IEntityAnimable, IVisible
 
     #region IVisible Implementation
 
-    public Transform GetTransform()
+    public override Transform GetTransform()
     {
         return transform;
     }
 
-    public string GetAllegiance()
+    public override string GetAllegiance()
     {
         return allegiance;
     }

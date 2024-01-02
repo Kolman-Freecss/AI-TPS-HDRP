@@ -9,21 +9,21 @@ public class EntityLife : MonoBehaviour
 {
     [SerializeField] private float minDeathPushForce = 3000f;
     [SerializeField] private float maxDeathPushForce = 4500f;
-    [SerializeField] float maxLife = 3f;
-    [SerializeField] float timeToDestroyAfterDeath = 2f;
+    [SerializeField] private float maxLife = 3f;
+    [SerializeField] private float timeToDestroyAfterDeath = 2f;
 
     [Header("Debug")] [SerializeField] private bool debugHit;
-    [SerializeField] Transform debugOffender;
-    [SerializeField] float damage = 1f;
+    [SerializeField] private Transform debugOffender;
+    [SerializeField] private float damage = 1f;
 
-    HurtBox hurtBox;
+    private HurtBox hurtBox;
     private EntityRagdollizer entityRagdollizer;
     private float currentLife;
-    Animator animator;
-    NavMeshAgent navMeshAgent;
-    PlayerController playerController;
-    CharacterController characterController;
-    LifeBar lifeBar;
+    private Animator animator;
+    private NavMeshAgent navMeshAgent;
+    private PlayerController playerController;
+    private CharacterController characterController;
+    private LifeBar lifeBar;
     private Enemy enemy;
 
     private void OnValidate()
@@ -68,28 +68,20 @@ public class EntityLife : MonoBehaviour
             {
                 animator.enabled = false;
 
-                if (navMeshAgent)
-                {
-                    navMeshAgent.enabled = false;
-                }
+                if (navMeshAgent) navMeshAgent.enabled = false;
 
-                if (playerController)
-                {
-                    playerController.enabled = false;
-                }
+                if (playerController) playerController.enabled = false;
 
-                if (characterController)
-                {
-                    characterController.enabled = false;
-                }
+                if (characterController) characterController.enabled = false;
 
                 if (enemy)
                 {
                     enemy.enabled = false;
+                    enemy.GetComponent<Collider>().enabled = false;
                 }
 
                 entityRagdollizer.Ragdollize();
-                entityRagdollizer.Push((transform.position - offender.position), minDeathPushForce, maxDeathPushForce);
+                entityRagdollizer.Push(transform.position - offender.position, minDeathPushForce, maxDeathPushForce);
 
                 Destroy(gameObject, timeToDestroyAfterDeath);
             }

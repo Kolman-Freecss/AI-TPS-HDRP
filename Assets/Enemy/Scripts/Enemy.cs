@@ -1,22 +1,22 @@
 #region
 
-using Entity.Scripts;
 using UnityEngine;
 using UnityEngine.AI;
+using CharacterController = _3rdPartyAssets.Packages.KolmanFreecss.Systems.CharacterController.CharacterController;
 
 #endregion
 
-public class Enemy : MonoBehaviour, IEntityAnimable, IVisible
+public class Enemy : CharacterController
 {
     [SerializeField] private Transform leftHand;
 
-    [SerializeField] string allegiance = "Enemy";
+    [SerializeField] private string allegiance = "Enemy";
 
     private NavMeshAgent agent;
-    EntitySight entitySight;
+    private EntitySight entitySight;
 
-    PatrolState patrolState;
-    MeleeAttackState meleeAttackState;
+    private PatrolState patrolState;
+    private MeleeAttackState meleeAttackState;
 
     private void Awake()
     {
@@ -28,27 +28,27 @@ public class Enemy : MonoBehaviour, IEntityAnimable, IVisible
 
     #region IEntityAnimable Implementation
 
-    public Vector3 GetLastVelocity()
+    public override Vector3 GetLastVelocity()
     {
         return agent.velocity;
     }
 
-    public float GetVerticalVelocity()
+    public override float GetVerticalVelocity()
     {
         return 0f;
     }
 
-    public float GetJumpSpeed()
+    public override float GetJumpSpeed()
     {
         return 0f;
     }
 
-    public bool IsGrounded()
+    public override bool IsGrounded()
     {
         return true;
     }
 
-    public Transform GetLeftHand()
+    public override Transform GetLeftHand()
     {
         return leftHand;
     }
@@ -57,12 +57,12 @@ public class Enemy : MonoBehaviour, IEntityAnimable, IVisible
 
     #region IVisible Implementation
 
-    public Transform GetTransform()
+    public override Transform GetTransform()
     {
         return transform;
     }
 
-    public string GetAllegiance()
+    public override string GetAllegiance()
     {
         return allegiance;
     }

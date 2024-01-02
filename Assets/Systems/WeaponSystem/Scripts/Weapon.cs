@@ -3,6 +3,7 @@
 using System.Collections;
 using _3rdPartyAssets.Packages.KolmanFreecss.Scripts;
 using UnityEngine;
+using CharacterController = _3rdPartyAssets.Packages.KolmanFreecss.Systems.CharacterController.CharacterController;
 
 #endregion
 
@@ -52,7 +53,7 @@ public class Weapon : MonoBehaviour
     private GameObject magazineHand;
 
     //TODO: Remove this dependency
-    [SerializeField] private PlayerController entityAnimable;
+    [SerializeField] private CharacterController entityAnimable;
 
     #endregion
 
