@@ -493,6 +493,8 @@ GameObject:
   - component: {fileID: 151373312}
   - component: {fileID: 151373311}
   - component: {fileID: 151373310}
+  - component: {fileID: 151373313}
+  - component: {fileID: 151373314}
   m_Layer: 5
   m_Name: Btt_Credits
   m_TagString: Untagged
@@ -563,19 +565,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 151373311}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &151373311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +604,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151373308}
   m_CullTransparentMesh: 1
+--- !u!114 &151373313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151373308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eead0f6c478730549821eb1e8ad23e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &151373314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151373308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &492866046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,6 +1153,8 @@ GameObject:
   - component: {fileID: 865101167}
   - component: {fileID: 865101166}
   - component: {fileID: 865101165}
+  - component: {fileID: 865101168}
+  - component: {fileID: 865101169}
   m_Layer: 5
   m_Name: Btt_Options
   m_TagString: Untagged
@@ -1259,6 +1276,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865101163}
   m_CullTransparentMesh: 1
+--- !u!114 &865101168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865101163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eead0f6c478730549821eb1e8ad23e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &865101169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865101163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &981075217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2090,8 @@ GameObject:
   - component: {fileID: 1892234592}
   - component: {fileID: 1892234591}
   - component: {fileID: 1892234590}
+  - component: {fileID: 1892234593}
+  - component: {fileID: 1892234594}
   m_Layer: 5
   m_Name: Btt_NewGame
   m_TagString: Untagged
@@ -2169,6 +2213,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892234588}
   m_CullTransparentMesh: 1
+--- !u!114 &1892234593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892234588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eead0f6c478730549821eb1e8ad23e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1892234594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892234588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!4 &1953144042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8502027070407031561, guid: 0acaccab109b74f46841edb8b4f6d5dd,
