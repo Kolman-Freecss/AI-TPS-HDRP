@@ -415,7 +415,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1420565739}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1615154070}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 799603060}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -3764,6 +3764,11 @@ PrefabInstance:
       propertyPath: backButton
       value: 
       objectReference: {fileID: 852420270}
+    - target: {fileID: 1358612017783501673, guid: 170c4562b5745e74a8937c28b5bb0167,
+        type: 3}
+      propertyPath: m_SFXVolumeSlider
+      value: 
+      objectReference: {fileID: 203544952}
     - target: {fileID: 1358612017783501673, guid: 170c4562b5745e74a8937c28b5bb0167,
         type: 3}
       propertyPath: m_MusicVolumeSlider

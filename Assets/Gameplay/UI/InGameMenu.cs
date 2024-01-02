@@ -1,6 +1,7 @@
 #region
 
 using System;
+using _3rdPartyAssets.Packages.KolmanFreecss.Systems.PlayerUtils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -34,7 +35,7 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] private Button menuButton;
 
     [Header("Sliders")] [SerializeField] private Slider m_MasterVolumeSlider;
-    [SerializeField] private Slider m_EffectsVolumeSlider;
+    [SerializeField] private Slider m_SFXVolumeSlider;
 
     [SerializeField] private Slider m_MusicVolumeSlider;
     // [SerializeField] private Toggle windowedToggle;
@@ -84,16 +85,16 @@ public class InGameMenu : MonoBehaviour
             tutorialAction.action.performed += onTutorialAction.Invoke;
 
             // Note that we initialize the slider BEFORE we listen for changes (so we don't get notified of our own change!)
-            m_MasterVolumeSlider.value = SoundManager.Instance.MasterAudioVolume;
+            m_MasterVolumeSlider.value = ClientPrefs.GetMasterVolume();
             m_MasterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeSliderChanged);
 
             // initialize music slider similarly.
-            m_MusicVolumeSlider.value = SoundManager.Instance.MusicAudioVolume;
+            m_MusicVolumeSlider.value = ClientPrefs.GetMusicVolume();
             m_MusicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeSliderChanged);
 
             // initialize effects slider similarly.
-            m_EffectsVolumeSlider.value = SoundManager.Instance.EffectsAudioVolume;
-            m_EffectsVolumeSlider.onValueChanged.AddListener(OnEffectsVolumeSliderChanged);
+            m_SFXVolumeSlider.value = ClientPrefs.GetSFXVolume();
+            m_SFXVolumeSlider.onValueChanged.AddListener(OnSFXVolumeSliderChanged);
         }
         catch (Exception e)
         {
@@ -112,8 +113,8 @@ public class InGameMenu : MonoBehaviour
         tutorialText.gameObject.SetActive(false);
         m_isPaused = false;
         canvas.gameObject.SetActive(m_isPaused);
-        m_MusicVolumeSlider.value = SoundManager.Instance.MusicAudioVolume;
-        m_EffectsVolumeSlider.value = SoundManager.Instance.EffectsAudioVolume;
+        m_MusicVolumeSlider.value = ClientPrefs.GetMusicVolume();
+        m_SFXVolumeSlider.value = ClientPrefs.GetSFXVolume();
         // windowedToggle.isOn = DisplaySettingsManager.Instance.windowed;
     }
 
@@ -128,17 +129,20 @@ public class InGameMenu : MonoBehaviour
 
     private void OnMasterVolumeSliderChanged(float newValue)
     {
-        SoundManager.Instance.SetMasterVolume(newValue);
+        ClientPrefs.SetMasterVolume(newValue);
+        SoundManager.Instance.ConfigureMasterVolume();
     }
 
     private void OnMusicVolumeSliderChanged(float newValue)
     {
-        SoundManager.Instance.SetMusicVolume(newValue);
+        ClientPrefs.SetMusicVolume(newValue);
+        SoundManager.Instance.ConfigureMusicVolume();
     }
 
-    private void OnEffectsVolumeSliderChanged(float newValue)
+    private void OnSFXVolumeSliderChanged(float newValue)
     {
-        SoundManager.Instance.SetEffectsVolume(newValue);
+        ClientPrefs.SetSFXVolume(newValue);
+        SoundManager.Instance.ConfigureSFXVolume();
     }
 
     public void OnPause(InputAction.CallbackContext context = default)
@@ -193,7 +197,7 @@ public class InGameMenu : MonoBehaviour
         backButton.onClick.RemoveAllListeners();
         m_MasterVolumeSlider.onValueChanged.RemoveListener(OnMasterVolumeSliderChanged);
         m_MusicVolumeSlider.onValueChanged.RemoveListener(OnMusicVolumeSliderChanged);
-        m_EffectsVolumeSlider.onValueChanged.RemoveListener(OnEffectsVolumeSliderChanged);
+        m_SFXVolumeSlider.onValueChanged.RemoveListener(OnSFXVolumeSliderChanged);
     }
 
     #endregion
