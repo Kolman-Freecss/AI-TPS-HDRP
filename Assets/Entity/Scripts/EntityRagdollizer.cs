@@ -17,26 +17,26 @@ public class EntityRagdollizer : MonoBehaviour
     [SerializeField] float debugMaxForce;
 
 
-    private void OnValidate()
-    {
-        if (debugRagdollize)
-        {
-            debugRagdollize = false;
-            Ragdollize();
-        }
-
-        if (debugDeragdollize)
-        {
-            debugDeragdollize = false;
-            Deragdollize();
-        }
-
-        if (debugPush)
-        {
-            debugPush = false;
-            Push(debugDirection.normalized, debugMinForce, debugMaxForce);
-        }
-    }
+    // private void OnValidate()
+    // {
+    //     if (debugRagdollize)
+    //     {
+    //         debugRagdollize = false;
+    //         Ragdollize();
+    //     }
+    //
+    //     if (debugDeragdollize)
+    //     {
+    //         debugDeragdollize = false;
+    //         Deragdollize();
+    //     }
+    //
+    //     if (debugPush)
+    //     {
+    //         debugPush = false;
+    //         Push(debugDirection.normalized, debugMinForce, debugMaxForce);
+    //     }
+    // }
 
     private void Awake()
     {

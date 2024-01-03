@@ -42,7 +42,7 @@ public class InGameMenu : MonoBehaviour
 
     [SerializeField] private CanvasRenderer canvas;
 
-    private Boolean m_isPaused = false;
+    private bool m_isPaused = false;
 
     #region InitData
 
@@ -102,12 +102,12 @@ public class InGameMenu : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         Init();
     }
 
-    void Init()
+    private void Init()
     {
         tutorialPanel.SetActive(false);
         tutorialText.gameObject.SetActive(false);
@@ -171,10 +171,7 @@ public class InGameMenu : MonoBehaviour
     public void OnTutorial(InputAction.CallbackContext context = default)
     {
         tutorialPanel.SetActive(!tutorialPanel.activeSelf);
-        if (tutorialText.gameObject.activeSelf)
-        {
-            tutorialText.gameObject.SetActive(false);
-        }
+        if (tutorialText.gameObject.activeSelf) tutorialText.gameObject.SetActive(false);
     }
 
     // public void OnToggleWindowed()
@@ -183,7 +180,7 @@ public class InGameMenu : MonoBehaviour
     //     DisplaySettingsManager.Instance.ToggleWindowed(windowedToggle.isOn);
     // }
 
-    public Boolean IsPaused()
+    public bool IsPaused()
     {
         return m_isPaused;
     }

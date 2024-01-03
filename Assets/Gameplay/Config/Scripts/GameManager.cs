@@ -8,6 +8,7 @@ using Systems.NarrationSystem.Dialogue.Data;
 using Systems.NarrationSystem.Flow;
 using UnityEngine;
 using UnityEngine.Events;
+using Zenject;
 
 #endregion
 
@@ -50,7 +51,13 @@ public class GameManager : MonoBehaviour
 
     #region InitData
 
-    void Awake()
+    [Inject]
+    public void Construct()
+    {
+        Debug.Log("GameManager Construct");
+    }
+
+    private void Awake()
     {
         ManageSingleton();
     }
@@ -71,10 +78,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (debug)
-        {
-            SetPlayerDebug();
-        }
+        if (debug) SetPlayerDebug();
     }
 
     public void SetPlayerDebug()
@@ -147,7 +151,6 @@ public class GameManager : MonoBehaviour
     public void EndGame(bool isWin)
     {
         if (m_GameFinalDialogue != null && isWin)
-        {
             try
             {
                 m_OnFinishGame = new FinishGameDelegate(FinishGame);
@@ -158,20 +161,14 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogError("GameManager: Error while initializing narration round: " + e);
             }
-        }
         else
-        {
             FinishGame();
-        }
 
         void FinishGame()
         {
             try
             {
-                if (isWin)
-                {
-                    m_OnLastDialogueFinish -= m_OnFinishGame.Invoke;
-                }
+                if (isWin) m_OnLastDialogueFinish -= m_OnFinishGame.Invoke;
 
                 m_GameWon = isWin;
                 SoundManager.Instance.StartBackgroundMusic(isWin
