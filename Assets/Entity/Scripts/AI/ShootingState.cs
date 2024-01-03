@@ -36,6 +36,13 @@ namespace Entity.Scripts.AI
 
         private void UpdateShoot()
         {
+            Weapon currentWeapon = entityWeapons.GetCurrentWeapon();
+            if (!currentWeapon.HasAmmo() && currentWeapon.HasAmmoClips())
+            {
+                entityWeapons.Reload();
+                return;
+            }
+
             if (entityWeapons.GetCurrentWeapon().shotMode == Weapon.ShotMode.ShotByShot)
                 if (Time.time - lastShotTime > 1f / shotsPerSecondInShotByShotWeapon)
                 {
