@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da31e765335bd54c95ecc1255628bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 0}
+  leftHand: {fileID: 4497403839016513884}
   allegiance: Enemy
 --- !u!114 &290052851412331397
 MonoBehaviour:
@@ -687,6 +687,12 @@ PrefabInstance:
 --- !u!4 &2330306325476026751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6885316298486507885, guid: 70829487bdf25cf4cad208f877241362,
+    type: 3}
+  m_PrefabInstance: {fileID: 9213071743787646994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4497403839016513884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4734016611590631758, guid: 70829487bdf25cf4cad208f877241362,
     type: 3}
   m_PrefabInstance: {fileID: 9213071743787646994}
   m_PrefabAsset: {fileID: 0}
