@@ -20,10 +20,11 @@ namespace Gameplay.GameplayObjects.Player.Script
         [SerializeField] private AudioClip m_OnMeatingClip;
         [SerializeField] private Image ParentActionProgressBar;
 
-        EntityLife m_EntityLife;
-        EntityAnimation m_EntityAnimation;
-        AudioSource m_AudioSource;
-        AnimationEvent animationEvent;
+        private EntityLife m_EntityLife;
+        private EntityAnimation m_EntityAnimation;
+
+        private AudioSource m_AudioSource;
+        // AnimationEvent animationEvent;
 
         private MeatInteractable currentMeatInteraction;
         private Image progressBar;
@@ -39,7 +40,7 @@ namespace Gameplay.GameplayObjects.Player.Script
         {
             ParentActionProgressBar.gameObject.SetActive(false);
             progressBar = ParentActionProgressBar.gameObject.transform.GetChild(0).GetComponent<Image>();
-            animationEvent = GetComponentInChildren<AnimationEvent>();
+            // animationEvent = GetComponentInChildren<AnimationEvent>();
             // animationEvent.OnAnimationFinish += HandleAnimationFinished;
         }
 

@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 8890989676351689399}
   - component: {fileID: 1152669740388780576}
   - component: {fileID: 6268134300088140483}
+  - component: {fileID: 6240033029925078432}
+  - component: {fileID: 3162622187018559536}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -268,6 +270,35 @@ MonoBehaviour:
   reloadInput: {fileID: -8583574396932104343, guid: 3fb20003132972e4f9dcd090eea67072,
     type: 3}
   currentAmmoText: {fileID: 1834381505711494245}
+--- !u!114 &6240033029925078432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122173887601756650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a69ebaa927d18c48bfa5ffdbffd90d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractAction: {fileID: -1610860083505453169, guid: 3fb20003132972e4f9dcd090eea67072,
+    type: 3}
+  m_InteractText: {fileID: 4656229792992972887}
+--- !u!114 &3162622187018559536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122173887601756650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b50a1725bf95184e856ac0d8cf34b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnMeatingClip: {fileID: 0}
+  ParentActionProgressBar: {fileID: 6784869495052358084}
 --- !u!1 &644987865413011141
 GameObject:
   m_ObjectHideFlags: 0
