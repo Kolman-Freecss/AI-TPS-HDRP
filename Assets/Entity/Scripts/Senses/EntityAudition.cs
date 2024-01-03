@@ -25,10 +25,7 @@ public class EntityAudition : MonoBehaviour
 
     private void Update()
     {
-        foreach (AudibleHeard ah in heardAudibles)
-        {
-            ah.timeLeftToForget -= Time.deltaTime;
-        }
+        foreach (AudibleHeard ah in heardAudibles) ah.timeLeftToForget -= Time.deltaTime;
 
         heardAudibles.RemoveAll(ah => ah.timeLeftToForget <= 0f);
 
@@ -53,6 +50,19 @@ public class EntityAudition : MonoBehaviour
             audibleHeard.audible = audible;
             heardAudibles.Add(audibleHeard);
         }
+    }
+
+    public void RemoveAudible(Audible audible)
+    {
+        if (audible == null)
+        {
+            Debug.LogWarning("Trying to remove a null audible");
+            return;
+        }
+
+        AudibleHeard existingAudibleHeard = heardAudibles.Find(ah => ah.audible == audible);
+
+        if (existingAudibleHeard != null) heardAudibles.Remove(existingAudibleHeard);
     }
 
     public Transform GetBestTarget()

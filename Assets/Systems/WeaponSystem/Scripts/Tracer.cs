@@ -18,8 +18,12 @@ public class Tracer : MonoBehaviour
 
     private void Start()
     {
-        DOTween.To(() => lineRenderer.widthMultiplier, x => lineRenderer.widthMultiplier = x, 0f, lifeTime);
-        Destroy(gameObject, lifeTime);
+        DOTween.To(() => lineRenderer.widthMultiplier, x => lineRenderer.widthMultiplier = x, 0f, lifeTime)
+            .OnComplete(() =>
+            {
+                if (lineRenderer != null)
+                    Destroy(gameObject, lifeTime);
+            });
     }
 
     public void Init(Vector3 startPosition, Vector3 endPosition)

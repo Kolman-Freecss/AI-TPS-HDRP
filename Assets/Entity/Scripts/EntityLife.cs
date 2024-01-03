@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 #endregion
 
@@ -25,6 +26,8 @@ public class EntityLife : MonoBehaviour
     private CharacterController characterController;
     private LifeBar lifeBar;
     private Enemy enemy;
+
+    public UnityEvent onDeath = new();
 
     private void OnValidate()
     {
@@ -70,21 +73,38 @@ public class EntityLife : MonoBehaviour
 
                 if (navMeshAgent) navMeshAgent.enabled = false;
 
-                if (playerController) playerController.enabled = false;
+                if (playerController)
+                {
+                    playerController.enabled = false;
+                    onDeath.Invoke();
+                }
 
-                if (characterController) characterController.enabled = false;
+                if (characterController)
+                {
+                    characterController.enabled = false;
+                    onDeath.Invoke();
+                }
 
                 if (enemy)
                 {
                     enemy.enabled = false;
                     enemy.GetComponent<Collider>().enabled = false;
+                    entityRagdollizer.Ragdollize();
+                    entityRagdollizer.Push(transform.position - offender.position, minDeathPushForce,
+                        maxDeathPushForce);
+
+                    Destroy(gameObject, timeToDestroyAfterDeath);
                 }
-
-                entityRagdollizer.Ragdollize();
-                entityRagdollizer.Push(transform.position - offender.position, minDeathPushForce, maxDeathPushForce);
-
-                Destroy(gameObject, timeToDestroyAfterDeath);
             }
         }
     }
+
+    #region Getter & Setter
+
+    public bool IsAlive()
+    {
+        return currentLife > 0f;
+    }
+
+    #endregion
 }

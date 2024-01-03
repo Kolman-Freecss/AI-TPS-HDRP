@@ -1,6 +1,7 @@
 ﻿#region
 
 using Entity.Scripts;
+using Gameplay.Config.Scripts;
 using Gameplay.GameplayObjects.Interactables._derivatives;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,8 +25,8 @@ namespace Gameplay.GameplayObjects.Player.Script
         private EntityAnimation m_EntityAnimation;
 
         private AudioSource m_AudioSource;
-        // AnimationEvent animationEvent;
 
+        // AnimationEvent animationEvent;
         private MeatInteractable currentMeatInteraction;
         private Image progressBar;
 
@@ -40,8 +41,14 @@ namespace Gameplay.GameplayObjects.Player.Script
         {
             ParentActionProgressBar.gameObject.SetActive(false);
             progressBar = ParentActionProgressBar.gameObject.transform.GetChild(0).GetComponent<Image>();
+            m_EntityLife.onDeath.AddListener(OnDeath);
             // animationEvent = GetComponentInChildren<AnimationEvent>();
             // animationEvent.OnAnimationFinish += HandleAnimationFinished;
+        }
+
+        private void OnDeath()
+        {
+            RoundManager.Instance.OnPlayerDeath();
         }
 
         // private void HandleAnimationFinished(int handleAnimationId)

@@ -1,5 +1,6 @@
 ﻿#region
 
+using Entity.Scripts.Senses;
 using UnityEngine;
 
 #endregion
@@ -105,8 +106,11 @@ namespace Entity.Scripts.AI
             bool canHearTarget = entityAudition.heardAudibles.Find(
                 (x) => x.audible.transform == target) != null;
 
+            EntityLife targetEntityLife = target ? target.GetComponent<EntityLife>() : null;
+            bool isTargetAlive = targetEntityLife ? targetEntityLife.IsAlive() : false;
+
             // Make decission
-            if (target)
+            if (target && isTargetAlive)
             {
                 if (rangedEnemyType == RangedEnemyType.Ambushers) rangedEnemyType = RangedEnemyType.Valiants;
 
@@ -137,6 +141,11 @@ namespace Entity.Scripts.AI
                 {
                     SetState(meleeAttackState);
                 }
+            }
+            else if (target && !isTargetAlive)
+            {
+                entityAudition.RemoveAudible(target.GetComponent<Audible>());
+                SetState(patrolState);
             }
             else if (hasLastPerceivedPosition)
             {

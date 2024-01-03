@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
         IEnumerator OnEndGame()
         {
             yield return new WaitForSeconds(timeToFinishGame);
-            SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.EndGame);
+            SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.EndGame, true);
             IsGameStarted = false;
         }
     }
