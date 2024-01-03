@@ -90,9 +90,14 @@ public class GameManager : MonoBehaviour
 
     #region Logic
 
-    public void StartGame()
+    public void InitGame()
     {
         SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameInit);
+        StartGame();
+    }
+
+    public void StartGame()
+    {
         SoundManager.Instance.StartBackgroundMusic(SoundManager.BackgroundMusic.InGameInit);
         IsGameStarted = true;
         OnGameStarted?.Invoke();
@@ -100,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        StartGame();
+        InitGame();
     }
 
     public void PauseGameEvent(bool mIsPaused)
