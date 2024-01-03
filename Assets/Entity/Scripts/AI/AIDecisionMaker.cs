@@ -29,8 +29,10 @@ namespace Entity.Scripts.AI
         private EntitySight entitySight;
         private EntityAudition entityAudition;
         private EntityWeapons entityWeapons;
+        private EntityLife entityLife;
 
         private IdleState idleState;
+        private DeathState deathState;
         private MeleeAttackState meleeAttackState;
         private PatrolState patrolState;
         private SeekingState seekingState;
@@ -52,8 +54,10 @@ namespace Entity.Scripts.AI
             entityWeapons = GetComponent<EntityWeapons>();
             entitySight = GetComponentInChildren<EntitySight>();
             entityAudition = GetComponentInChildren<EntityAudition>();
+            entityLife = GetComponent<EntityLife>();
 
             idleState = GetComponent<IdleState>();
+            deathState = GetComponent<DeathState>();
             meleeAttackState = GetComponent<MeleeAttackState>();
             patrolState = GetComponent<PatrolState>();
             seekingState = GetComponent<SeekingState>();
@@ -78,6 +82,12 @@ namespace Entity.Scripts.AI
 
         private void Update()
         {
+            if (!entityLife.IsAlive())
+            {
+                SetState(deathState);
+                return;
+            }
+
             // Choose target
             Transform visibleTarget = entitySight.visiblesInSight.Find((x) => x.GetAllegiance() != GetAllegiance())
                 ?.GetTransform();

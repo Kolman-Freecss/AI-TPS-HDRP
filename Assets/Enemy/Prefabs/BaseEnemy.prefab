@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2916315640202414059}
   - component: {fileID: 3041116595405655722}
   - component: {fileID: 4254210250333353019}
+  - component: {fileID: 115105162254040672}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da31e765335bd54c95ecc1255628bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHand: {fileID: 0}
   allegiance: Enemy
 --- !u!114 &290052851412331397
 MonoBehaviour:
@@ -236,6 +238,9 @@ MonoBehaviour:
   debugHit: 0
   debugOffender: {fileID: 0}
   damage: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7381914267813207914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +388,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponsParent: {fileID: 0}
   startingWeaponIndex: 0
+  leftHandIKTarget: {fileID: 0}
+  rightHandIKTarget: {fileID: 0}
+  leftHintIKTarget: {fileID: 0}
+  rightHintIKTarget: {fileID: 0}
+--- !u!114 &115105162254040672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059383071621953401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b20f7cec82f4ed5840c932116f9b345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decissionMaker: {fileID: 340863230455348953}
+  target: {fileID: 0}
 --- !u!1 &8210058976105136607
 GameObject:
   m_ObjectHideFlags: 0
