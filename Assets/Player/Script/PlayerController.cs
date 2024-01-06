@@ -242,5 +242,10 @@ public class PlayerController : CharacterController
         return allegiance;
     }
 
+    public override bool HaveWeapon()
+    {
+        return entityWeapons.HasCurrentWeapon();
+    }
+
     #endregion
 }

@@ -14,9 +14,11 @@ public class Enemy : CharacterController
 
     private NavMeshAgent agent;
     private EntitySight entitySight;
+    private EntityWeapons entityWeapons;
 
     private PatrolState patrolState;
     private MeleeAttackState meleeAttackState;
+
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class Enemy : CharacterController
         entitySight = GetComponentInChildren<EntitySight>();
         patrolState = GetComponent<PatrolState>();
         meleeAttackState = GetComponent<MeleeAttackState>();
+        entityWeapons = GetComponent<EntityWeapons>();
     }
 
     #region IEntityAnimable Implementation
@@ -51,6 +54,11 @@ public class Enemy : CharacterController
     public override Transform GetLeftHand()
     {
         return leftHand;
+    }
+
+    public override bool HaveWeapon()
+    {
+        return entityWeapons.HasCurrentWeapon();
     }
 
     #endregion

@@ -18,6 +18,8 @@ public class EntityWeapons : MonoBehaviour
 
     private Weapon[] weapons;
     private int currentWeapon = -1;
+    private bool haveWeapon = false;
+    private AudioSource weaponsAudioSource;
 
     protected virtual void Awake()
     {
@@ -26,6 +28,7 @@ public class EntityWeapons : MonoBehaviour
             weapons = weaponsParent.GetComponentsInChildren<Weapon>();
             currentWeapon = weapons.Length > 0 ? 0 : -1;
             SetCurrentWeapon(startingWeaponIndex);
+            weaponsAudioSource = weaponsParent.GetComponent<AudioSource>();
         }
         else
         {
@@ -62,16 +65,16 @@ public class EntityWeapons : MonoBehaviour
 
     internal void SelectNextWeapon()
     {
-        int nextWeapon = ++currentWeapon;
-        if (nextWeapon >= weapons.Length) nextWeapon = 0;
+        int nextWeapon = currentWeapon + 1;
+        if (nextWeapon >= weapons.Length) nextWeapon = -1;
 
         SetCurrentWeapon(nextWeapon);
     }
 
     internal void SelectPreviousWeapon()
     {
-        int prevWeapon = --currentWeapon;
-        if (prevWeapon < weapons.Length) prevWeapon = weapons.Length - 1;
+        int prevWeapon = currentWeapon - 1;
+        if (prevWeapon < -1) prevWeapon = weapons.Length - 1;
 
         SetCurrentWeapon(prevWeapon);
     }
@@ -85,6 +88,10 @@ public class EntityWeapons : MonoBehaviour
         }
 
         currentWeapon = selectedWeapon;
+        haveWeapon = currentWeapon != -1;
+
+        if (weaponsAudioSource != null)
+            weaponsAudioSource.Play();
     }
 
     public virtual void Reload()

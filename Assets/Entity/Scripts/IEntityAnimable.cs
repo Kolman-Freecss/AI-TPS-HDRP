@@ -17,5 +17,7 @@ namespace Entity.Scripts
         public bool IsGrounded();
 
         public Transform GetLeftHand();
+
+        public bool HaveWeapon();
     }
 }

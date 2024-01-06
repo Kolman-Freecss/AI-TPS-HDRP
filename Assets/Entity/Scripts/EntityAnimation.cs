@@ -10,9 +10,9 @@ namespace Entity.Scripts
     {
         [Header("Animation")] [SerializeField] private float transitionVelocity = 1f;
 
-        Vector3 smoothedAnimationVelocity = Vector3.zero;
+        private Vector3 smoothedAnimationVelocity = Vector3.zero;
         private Animator animator;
-        IEntityAnimable entityAnimable;
+        private IEntityAnimable entityAnimable;
 
         private void Awake()
         {
@@ -25,11 +25,13 @@ namespace Entity.Scripts
             UpdateAnimation(entityAnimable.GetLastVelocity(),
                 entityAnimable.GetVerticalVelocity(),
                 entityAnimable.GetJumpSpeed(),
-                entityAnimable.IsGrounded()
+                entityAnimable.IsGrounded(),
+                entityAnimable.HaveWeapon()
             );
         }
 
-        private void UpdateAnimation(Vector3 lastVelocity, float verticalVelocity, float jumpSpeed, bool isGrounded)
+        private void UpdateAnimation(Vector3 lastVelocity, float verticalVelocity, float jumpSpeed, bool isGrounded,
+            bool haveWeapon)
         {
             Vector3 velocityDistance = lastVelocity - smoothedAnimationVelocity;
             float transitionVelocityToApply = transitionVelocity * Time.deltaTime;
@@ -46,6 +48,7 @@ namespace Entity.Scripts
 
             animator.SetFloat("NormalizedVerticalVelocity", normalizedVerticalVelocity);
             animator.SetBool("IsGrounded", isGrounded);
+            animator.SetBool("HaveWeapon", haveWeapon);
         }
     }
 }
