@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a69ebaa927d18c48bfa5ffdbffd90d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractAction: {fileID: -1610860083505453169, guid: 3fb20003132972e4f9dcd090eea67072,
+  m_InteractAction: {fileID: -461899484053542053, guid: 3fb20003132972e4f9dcd090eea67072,
     type: 3}
   m_InteractText: {fileID: 4656229792992972887}
 --- !u!114 &3162622187018559536

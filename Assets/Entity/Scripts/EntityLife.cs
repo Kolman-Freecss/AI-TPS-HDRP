@@ -1,6 +1,7 @@
 #region
 
 using Gameplay.GameplayObjects.Interactables._derivatives;
+using Gameplay.GameplayObjects.Player.Script;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -95,7 +96,11 @@ public class EntityLife : MonoBehaviour
                         maxDeathPushForce);
 
                     enemy.GetComponent<SphereCollider>().enabled = true;
-                    enemy.GetComponent<EnemyInteractable>().enabled = true;
+                    EnemyInteractable enemyInteractable = enemy.GetComponent<EnemyInteractable>();
+                    enemyInteractable.enabled = true;
+                    if (enemyInteractable.OnInteraction.GetPersistentEventCount() == 0)
+                        enemyInteractable.OnInteraction.AddListener(GameManager.Instance.m_player
+                            .GetComponent<PlayerStats>().OnInteraction);
                     enemy.GetComponent<EnemyLoot>().DropLoot();
 
                     var parent = transform.parent;
