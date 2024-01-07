@@ -202,7 +202,7 @@ PrefabInstance:
         type: 3}
       propertyPath: entityAnimable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9127197153245218331}
     - target: {fileID: 6800425119292812618, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
@@ -449,3 +449,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2603717676013601013}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9127197153245218331 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6523483978493658862, guid: 599588a1b5937bc4ab2aa1d0bec9eaa0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2603717676013601013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da31e765335bd54c95ecc1255628bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

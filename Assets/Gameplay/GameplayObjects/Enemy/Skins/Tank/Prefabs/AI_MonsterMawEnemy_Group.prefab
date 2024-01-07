@@ -88,6 +88,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245df5f8545e3d54b9e0ac3fc16e1a4d, type: 3}
+--- !u!114 &1207771702814292822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3530878141989633564, guid: 245df5f8545e3d54b9e0ac3fc16e1a4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2432769534201431370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da31e765335bd54c95ecc1255628bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4067250860854461596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1851867969682522582, guid: 245df5f8545e3d54b9e0ac3fc16e1a4d,
@@ -276,7 +288,7 @@ PrefabInstance:
         type: 3}
       propertyPath: entityAnimable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1207771702814292822}
     - target: {fileID: 6800425119292812618, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
