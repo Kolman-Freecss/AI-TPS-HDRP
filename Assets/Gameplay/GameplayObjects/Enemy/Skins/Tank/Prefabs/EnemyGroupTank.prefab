@@ -60,6 +60,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741840861694011576, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 1768485822909668520}
+    - target: {fileID: 3741840861694011576, guid: e7b7b1fed929ac748a28032a22a0a6e2,
+        type: 3}
       propertyPath: enemyType
       value: 2
       objectReference: {fileID: 0}
@@ -93,6 +98,11 @@ PrefabInstance:
       propertyPath: m_AgentTypeID
       value: -334000983
       objectReference: {fileID: 0}
+    - target: {fileID: 5544490339006018318, guid: e7b7b1fed929ac748a28032a22a0a6e2,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6361352054474597439, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
       propertyPath: damage
@@ -101,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 6361352054474597439, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
       propertyPath: maxLife
-      value: 64
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7381914267813207914, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
@@ -230,6 +240,12 @@ Transform:
 --- !u!4 &1153405928613151444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8249315380677696633, guid: 3fdcdbfc712e66d4486d8557773b970f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7096208691042770605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1768485822909668520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8858615966980669957, guid: 3fdcdbfc712e66d4486d8557773b970f,
     type: 3}
   m_PrefabInstance: {fileID: 7096208691042770605}
   m_PrefabAsset: {fileID: 0}

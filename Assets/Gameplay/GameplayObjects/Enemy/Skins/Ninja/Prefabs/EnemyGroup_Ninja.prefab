@@ -74,6 +74,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7289314107932993406}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &8172807960247816208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1460148170323965806, guid: 57a62aa24d61fde49a129d0c5892688d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7289314107932993406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8745444384441660010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,15 +133,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3741840861694011576, guid: e7b7b1fed929ac748a28032a22a0a6e2,
+        type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 8172807960247816208}
     - target: {fileID: 5544490339006018318, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
       propertyPath: m_Speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5544490339006018318, guid: e7b7b1fed929ac748a28032a22a0a6e2,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6361352054474597439, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
       propertyPath: maxLife
-      value: 20
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7381914267813207914, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}

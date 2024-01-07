@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 456974398824638589, guid: 245df5f8545e3d54b9e0ac3fc16e1a4d,
         type: 3}
       propertyPath: rangedEnemyType
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 965884959279315946, guid: 245df5f8545e3d54b9e0ac3fc16e1a4d,
         type: 3}
@@ -169,13 +169,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2296500322635897483, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296500322635897483, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.948
       objectReference: {fileID: 0}
     - target: {fileID: 2296500322635897483, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.49
+      value: 0.804
       objectReference: {fileID: 0}
     - target: {fileID: 2296500322635897483, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
@@ -256,6 +261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AI_MonsterMawEnemy_Group
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174601413667908223, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6748894468622820137, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}

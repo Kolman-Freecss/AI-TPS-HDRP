@@ -294,6 +294,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 979c5fd4462b7714bb84062aacd8bd20, type: 3}
+--- !u!4 &190013969904702252 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4282847271584127115, guid: 979c5fd4462b7714bb84062aacd8bd20,
+    type: 3}
+  m_PrefabInstance: {fileID: 4164891033174133671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6851607911615422724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7411068238477011619, guid: 979c5fd4462b7714bb84062aacd8bd20,
@@ -370,6 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741840861694011576, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 190013969904702252}
+    - target: {fileID: 3741840861694011576, guid: e7b7b1fed929ac748a28032a22a0a6e2,
+        type: 3}
       propertyPath: enemyType
       value: 1
       objectReference: {fileID: 0}
@@ -382,6 +393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AgentTypeID
       value: -1372625422
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544490339006018318, guid: e7b7b1fed929ac748a28032a22a0a6e2,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6361352054474597439, guid: e7b7b1fed929ac748a28032a22a0a6e2,
         type: 3}
