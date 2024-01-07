@@ -450,7 +450,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: NotWeaponMovement
     m_StateMachine: {fileID: -2363321946086672767}
-    m_Mask: {fileID: 31900000, guid: c11033563b5cf734f844f4986f54d0b1, type: 2}
+    m_Mask: {fileID: 31900000, guid: fd4cc26f378734a4ab3c88da3f32e992, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -462,7 +462,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Attack
     m_StateMachine: {fileID: -3547553832911006373}
-    m_Mask: {fileID: 31900000, guid: c11033563b5cf734f844f4986f54d0b1, type: 2}
+    m_Mask: {fileID: 31900000, guid: fd4cc26f378734a4ab3c88da3f32e992, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -474,7 +474,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: WeaponMovement
     m_StateMachine: {fileID: 2484451530514293535}
-    m_Mask: {fileID: 31900000, guid: c11033563b5cf734f844f4986f54d0b1, type: 2}
+    m_Mask: {fileID: 31900000, guid: fd4cc26f378734a4ab3c88da3f32e992, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0

@@ -102,7 +102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6204073107204946385}
     - target: {fileID: 6949422730911360589, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: rangedEnemyType
@@ -111,27 +111,27 @@ PrefabInstance:
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0000003837049
       objectReference: {fileID: 0}
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.11999987
+      value: -0.11999953
       objectReference: {fileID: 0}
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
