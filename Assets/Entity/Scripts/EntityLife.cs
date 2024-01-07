@@ -1,5 +1,6 @@
 #region
 
+using Gameplay.GameplayObjects.Interactables._derivatives;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -93,6 +94,8 @@ public class EntityLife : MonoBehaviour
                     entityRagdollizer.Push(transform.position - offender.position, minDeathPushForce,
                         maxDeathPushForce);
 
+                    enemy.GetComponent<SphereCollider>().enabled = true;
+                    enemy.GetComponent<EnemyInteractable>().enabled = true;
                     enemy.GetComponent<EnemyLoot>().DropLoot();
 
                     var parent = transform.parent;

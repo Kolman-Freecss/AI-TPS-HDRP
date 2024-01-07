@@ -215,12 +215,15 @@ public class Weapon : MonoBehaviour
 
     public void IncreaseCurrentAmmo(int ammoAmount)
     {
-        ammoCount += ammoAmount;
+        int maxAmmo = ammoAmount;
+        maxAmmo = Mathf.Clamp(maxAmmo, 0, ammoInClipCapacity - ammoCount);
+        ammoCount += maxAmmo;
     }
 
     public void DecreaseCurrentAmmo(int ammoAmount)
     {
         ammoCount -= ammoAmount;
+        if (ammoCount < 0) ammoCount = 0;
     }
 
     public void ReduceCurrentAmmoClip()

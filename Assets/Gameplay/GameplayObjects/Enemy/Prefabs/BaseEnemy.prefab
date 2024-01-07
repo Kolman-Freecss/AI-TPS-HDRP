@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 115105162254040672}
   - component: {fileID: 8772744420395363642}
   - component: {fileID: -489213487214056041}
+  - component: {fileID: 3544447409479800024}
+  - component: {fileID: 197176471107716463}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -238,7 +240,7 @@ MonoBehaviour:
   minDeathPushForce: 2000
   maxDeathPushForce: 3000
   maxLife: 3
-  timeToDestroyAfterDeath: 2
+  timeToDestroyEnemyAfterDeath: 45
   debugHit: 0
   debugOffender: {fileID: 0}
   damage: 1
@@ -465,6 +467,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7264f69935454da49464383fce0ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3544447409479800024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059383071621953401}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c84a89b2ac4668a8dcc02981889630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+  m_IsInteractable: 1
+  m_audioInteraction: {fileID: 0}
+--- !u!135 &197176471107716463
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059383071621953401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 1.74
+  m_Center: {x: 0, y: 1.32, z: 0}
 --- !u!1 &8210058976105136607
 GameObject:
   m_ObjectHideFlags: 0

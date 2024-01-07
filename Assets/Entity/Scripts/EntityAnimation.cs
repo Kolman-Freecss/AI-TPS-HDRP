@@ -50,5 +50,10 @@ namespace Entity.Scripts
             animator.SetBool("IsGrounded", isGrounded);
             animator.SetBool("HaveWeapon", haveWeapon);
         }
+
+        public Animator GetAnimator()
+        {
+            return animator;
+        }
     }
 }
