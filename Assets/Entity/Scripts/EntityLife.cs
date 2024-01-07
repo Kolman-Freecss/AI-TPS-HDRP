@@ -11,7 +11,7 @@ public class EntityLife : MonoBehaviour
     [SerializeField] private float minDeathPushForce = 3000f;
     [SerializeField] private float maxDeathPushForce = 4500f;
     [SerializeField] private float maxLife = 3f;
-    [SerializeField] private float timeToDestroyAfterDeath = 2f;
+    [SerializeField] private float timeToDestroyEnemyAfterDeath = 45f;
 
     [Header("Debug")] [SerializeField] private bool debugHit;
     [SerializeField] private Transform debugOffender;
@@ -93,7 +93,10 @@ public class EntityLife : MonoBehaviour
                     entityRagdollizer.Push(transform.position - offender.position, minDeathPushForce,
                         maxDeathPushForce);
 
-                    Destroy(gameObject, timeToDestroyAfterDeath);
+                    enemy.GetComponent<EnemyLoot>().DropLoot();
+
+                    var parent = transform.parent;
+                    Destroy(parent.gameObject, timeToDestroyEnemyAfterDeath);
                 }
             }
         }

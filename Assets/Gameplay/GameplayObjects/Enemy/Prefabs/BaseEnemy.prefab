@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 4254210250333353019}
   - component: {fileID: 115105162254040672}
   - component: {fileID: 8772744420395363642}
+  - component: {fileID: -489213487214056041}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -452,6 +453,18 @@ MonoBehaviour:
   emissionFrequency: 5
   allegiance: Enemy
   speedThresholdToEmit: 1
+--- !u!114 &-489213487214056041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059383071621953401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7264f69935454da49464383fce0ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8210058976105136607
 GameObject:
   m_ObjectHideFlags: 0

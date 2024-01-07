@@ -202,5 +202,10 @@ namespace Entity.Scripts.AI
         {
             return allegiance;
         }
+
+        public RangedEnemyType GetRangedEnemyType()
+        {
+            return rangedEnemyType;
+        }
     }
 }

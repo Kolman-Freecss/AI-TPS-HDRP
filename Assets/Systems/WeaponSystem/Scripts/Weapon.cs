@@ -2,6 +2,7 @@
 
 using System.Collections;
 using _3rdPartyAssets.Packages.KolmanFreecss.Scripts;
+using Systems.WeaponSystem.Scripts;
 using UnityEngine;
 using CharacterController = _3rdPartyAssets.Packages.KolmanFreecss.Systems.CharacterController.CharacterController;
 
@@ -17,8 +18,9 @@ public class Weapon : MonoBehaviour
 
     public ShotMode shotMode;
 
-    [Header("Weapon Settings")] [SerializeField]
-    private int ammoCount;
+    [Header("Weapon Settings")] public WeaponType WeaponType;
+
+    [SerializeField] private int ammoCount;
 
     [SerializeField] private int ammoInClipCapacity;
 
