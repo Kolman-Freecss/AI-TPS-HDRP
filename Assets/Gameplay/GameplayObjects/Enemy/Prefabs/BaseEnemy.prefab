@@ -79,9 +79,11 @@ GameObject:
   - component: {fileID: 1901594171768116098}
   - component: {fileID: 4182553162755213429}
   - component: {fileID: 6361352054474597439}
+  - component: {fileID: 1967747763594575137}
   - component: {fileID: 7381914267813207914}
   - component: {fileID: 1423675939199122243}
   - component: {fileID: 340863230455348953}
+  - component: {fileID: 6964357721332138600}
   - component: {fileID: 1119709411340184910}
   - component: {fileID: 2419619118370073241}
   - component: {fileID: 7343831850585617478}
@@ -89,6 +91,7 @@ GameObject:
   - component: {fileID: 3041116595405655722}
   - component: {fileID: 4254210250333353019}
   - component: {fileID: 115105162254040672}
+  - component: {fileID: 8772744420395363642}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -241,6 +244,19 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1967747763594575137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059383071621953401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b97373ce2f980440aa0ce13bf6fa1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heardAudibles: []
 --- !u!114 &7381914267813207914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +310,20 @@ MonoBehaviour:
   shootRange: 15
   valiantRange: 5
   startState: {fileID: 1119709411340184910}
+--- !u!114 &6964357721332138600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059383071621953401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e0d6ac8fc3bf340a3c7b5b9242385d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decissionMaker: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1119709411340184910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +436,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decissionMaker: {fileID: 340863230455348953}
   target: {fileID: 0}
+--- !u!114 &8772744420395363642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059383071621953401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc9567a119c4040a658dd0880d02063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  emissionFrequency: 5
+  allegiance: Enemy
+  speedThresholdToEmit: 1
 --- !u!1 &8210058976105136607
 GameObject:
   m_ObjectHideFlags: 0
