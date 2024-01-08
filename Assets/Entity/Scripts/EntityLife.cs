@@ -68,6 +68,7 @@ public class EntityLife : MonoBehaviour
         if (currentLife > 0f)
         {
             currentLife -= 1f;
+            lifeBar.SetText(currentLife);
             lifeBar.SetNormalizedValue(Mathf.Clamp01(currentLife / maxLife));
             if (currentLife <= 0f)
             {
