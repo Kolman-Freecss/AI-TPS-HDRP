@@ -45,12 +45,24 @@ public class BarrelByRaycast : Barrel
         {
             nextShotTime = Time.time + 1f / cadence;
             weapon.shooting = true;
-            if (!weapon.CanShot())
+            bool canShotByShot = true;
+            if (Weapon.ShotMode.ShotByShot == weapon.shotMode) canShotByShot = weapon.CanShot() || weapon.checkCanShot;
+
+            if ((!weapon.CanShot() && Weapon.ShotMode.Continuous == weapon.shotMode)
+                || !canShotByShot)
             {
-                CantShoot();
+                if (Weapon.ShotMode.Continuous == weapon.shotMode ||
+                    (weapon.shotMode == Weapon.ShotMode.ShotByShot && !weapon.playCantShoot))
+                {
+                    weapon.playCantShoot = true;
+                    CantShoot();
+                }
+
                 weapon.shooting = false;
                 return;
             }
+
+            weapon.checkCanShot = true;
 
             base.Shot();
             Vector3 dispersedForward = DispersedForward();

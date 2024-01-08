@@ -291,6 +291,11 @@ MonoBehaviour:
   rightHintWeaponIKTarget: {fileID: 830746969132921422}
   active: 0
   entityAnimable: {fileID: 0}
+  shooting: 0
+  playWeaponShoot: 0
+  playWeaponShotByShot: 0
+  checkCanShot: 0
+  playCantShoot: 0
 --- !u!82 &1072069327526438205
 AudioSource:
   m_ObjectHideFlags: 0

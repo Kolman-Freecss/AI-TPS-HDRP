@@ -62,7 +62,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] private CharacterController entityAnimable;
 
     [HideInInspector] public bool shooting = false;
+
+    //TODO: Shit aux variables for shotbyshot
     [HideInInspector] public bool playWeaponShoot = false;
+    [HideInInspector] public bool playWeaponShotByShot = false;
+    [HideInInspector] public bool checkCanShot = false;
+    [HideInInspector] public bool playCantShoot = false;
 
     #endregion
 
@@ -73,10 +78,12 @@ public class Weapon : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         weaponAnimationEvent = GetComponent<WeaponAnimationEvent>();
 
+        haveMagazine = magazineWeapon != null;
+
         foreach (Barrel barrel in barrels) barrel.AssignWeapon(this);
     }
 
-    private void Start()
+    private void OnEnable()
     {
         if (weaponAnimationEvent != null) weaponAnimationEvent.animationEvent.AddListener(OnWeaponAnimationEvent);
     }
@@ -119,7 +126,6 @@ public class Weapon : MonoBehaviour
     {
         if (!playWeaponShoot)
         {
-            Debug.Log("PlayShot2");
             playWeaponShoot = true;
             DecreaseCurrentAmmo(1);
             PlayShotSound();
@@ -129,6 +135,9 @@ public class Weapon : MonoBehaviour
     public void Shot()
     {
         playWeaponShoot = false;
+        checkCanShot = false;
+        playWeaponShotByShot = false;
+        playCantShoot = false;
         foreach (Barrel barrel in barrels) barrel.Shot();
     }
 
@@ -144,6 +153,8 @@ public class Weapon : MonoBehaviour
 
     public bool CanShot()
     {
+        if (shotMode == ShotMode.ShotByShot)
+            return (HasAmmo() || playWeaponShoot) && !IsReloading();
         return HasAmmo() && !IsReloading();
     }
 
@@ -176,10 +187,14 @@ public class Weapon : MonoBehaviour
 
         void RefillOneAmmo()
         {
-            audioSource.PlayOneShot(reloadAudioClip);
-            animator.SetBool("Reloading", false);
-            ReduceCurrentAmmoClip();
-            IncreaseCurrentAmmo(1);
+            if (!IsAmmoFull() && HasAmmoClips())
+            {
+                audioSource.PlayOneShot(reloadAudioClip);
+                ReduceCurrentAmmoClip();
+                IncreaseCurrentAmmo(1);
+            }
+
+            if (IsAmmoFull() || !HasAmmoClips()) animator.SetBool("Reloading", false);
         }
 
         void DetachMagazine()
@@ -251,7 +266,7 @@ public class Weapon : MonoBehaviour
 
         IEnumerator ReloadCoroutine()
         {
-            if (haveMagazine)
+            if (!haveMagazine)
                 animator.SetBool("Reloading", true);
             yield return new WaitForSeconds(timeToReload);
             isReloading = false;

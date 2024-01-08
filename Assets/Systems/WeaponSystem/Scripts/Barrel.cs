@@ -57,9 +57,12 @@ public abstract class Barrel : MonoBehaviour
             Debug.LogWarning("No bullet prefab found for " + gameObject.name);
         }
 
-        if (weapon.Animator != null)
+        if ((weapon.Animator != null && weapon.shotMode == Weapon.ShotMode.Continuous)
+            || (weapon.Animator != null && weapon.shotMode == Weapon.ShotMode.ShotByShot &&
+                !weapon.playWeaponShotByShot))
         {
             Debug.Log("Shot animation");
+            weapon.playWeaponShotByShot = true;
             weapon.Animator.SetTrigger("Shoot");
         }
 
