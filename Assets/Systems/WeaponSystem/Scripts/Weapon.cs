@@ -18,6 +18,9 @@ public class Weapon : MonoBehaviour
 
     public ShotMode shotMode;
 
+    [Header("Weapon UI Settings")] [SerializeField]
+    private Sprite weaponSprite;
+
     [Header("Weapon Settings")] public WeaponType WeaponType;
 
     [SerializeField] private int ammoCount;
@@ -303,6 +306,8 @@ public class Weapon : MonoBehaviour
     public AudioSource AudioSource => audioSource;
 
     public GameObject BulletPrefab => bulletPrefab;
+
+    public Sprite WeaponSprite => weaponSprite;
 
     #endregion
 }

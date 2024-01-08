@@ -1,8 +1,9 @@
 ﻿#region
 
-using TMPro;
+using System.Collections.Generic;
+using ModestTree;
+using Systems.WeaponSystem.Scripts;
 using UnityEngine;
-using UnityEngine.UI;
 
 #endregion
 
@@ -10,20 +11,47 @@ namespace Gameplay.GameplayObjects.UI
 {
     public class WeaponUI : MonoBehaviour
     {
-        [SerializeField] private Image weaponSprite;
-        [SerializeField] private TextMeshProUGUI index;
+        [SerializeField] public WeaponUIWrapper weaponPrefab;
 
-        public void SetWeaponSprite(bool isCurrentWeapon)
+        public List<SerializableDictionaryEntry<WeaponType, WeaponUIWrapper>> weaponUIWrappers;
+
+        private WeaponUIWrapper m_CurrentWeaponUIWrapper;
+
+        public void SetWeaponSprite(WeaponType weaponType)
         {
-            if (isCurrentWeapon)
+            if (weaponUIWrappers.IsEmpty()) return;
+            if (m_CurrentWeaponUIWrapper != null)
             {
-                weaponSprite.color = Color.red;
-                index.color = Color.red;
+                m_CurrentWeaponUIWrapper.weaponSprite.color = Color.black;
+                m_CurrentWeaponUIWrapper.index.color = Color.black;
             }
-            else
+
+            m_CurrentWeaponUIWrapper = weaponUIWrappers.Find(x => x.Key == weaponType)?.Value;
+            if (m_CurrentWeaponUIWrapper != null)
             {
-                weaponSprite.color = Color.black;
-                index.color = Color.black;
+                m_CurrentWeaponUIWrapper.weaponSprite.color = Color.red;
+                m_CurrentWeaponUIWrapper.index.color = Color.red;
+            }
+        }
+
+        public void AddWeapon(Weapon weapon, int index)
+        {
+            WeaponUIWrapper weaponUIWrapper = Instantiate(weaponPrefab, transform);
+            weaponUIWrapper.weaponSprite.sprite = weapon.WeaponSprite;
+            weaponUIWrapper.index.text = weaponUIWrappers.Count.ToString();
+            weaponUIWrapper.weaponIndex = index;
+            weaponUIWrappers.Add(
+                new SerializableDictionaryEntry<WeaponType, WeaponUIWrapper>(weapon.WeaponType, weaponUIWrapper));
+        }
+
+        public void RemoveWeapon(WeaponType weaponType)
+        {
+            WeaponUIWrapper weaponUIWrapper = weaponUIWrappers.Find(x => x.Key == weaponType).Value;
+            if (weaponUIWrapper != null)
+            {
+                Destroy(weaponUIWrapper.gameObject);
+                weaponUIWrappers.Remove(
+                    new SerializableDictionaryEntry<WeaponType, WeaponUIWrapper>(weaponType, weaponUIWrapper));
             }
         }
     }

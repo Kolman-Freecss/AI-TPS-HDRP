@@ -1,5 +1,7 @@
 #region
 
+using Gameplay.GameplayObjects.UI;
+using Systems.WeaponSystem.Scripts;
 using UnityEngine;
 
 #endregion
@@ -17,16 +19,23 @@ public class EntityWeapons : MonoBehaviour
     [SerializeField] private Transform rightHintIKTarget;
 
     private Weapon[] weapons;
+    private WeaponUI weaponsUI;
     private int currentWeapon = -1;
     private bool haveWeapon = false;
     private AudioSource weaponsAudioSource;
+    private bool isPlayer = false;
 
     protected virtual void Awake()
     {
         if (weaponsParent != null)
         {
             weapons = weaponsParent.GetComponentsInChildren<Weapon>();
+            isPlayer = GetComponent<PlayerController>() != null;
+            if (isPlayer) weaponsUI = GetComponentInChildren<WeaponUI>();
             currentWeapon = weapons.Length > 0 ? 0 : -1;
+            if (weaponsUI != null)
+                for (int i = 0; i < weapons.Length; i++)
+                    weaponsUI.AddWeapon(weapons[i], i);
             SetCurrentWeapon(startingWeaponIndex);
             weaponsAudioSource = weaponsParent.GetComponent<AudioSource>();
         }
@@ -91,6 +100,14 @@ public class EntityWeapons : MonoBehaviour
 
         currentWeapon = selectedWeapon;
         haveWeapon = currentWeapon != -1;
+
+        if (isPlayer)
+        {
+            if (haveWeapon)
+                weaponsUI.SetWeaponSprite(weapons[currentWeapon].WeaponType);
+            else
+                weaponsUI.SetWeaponSprite(WeaponType.NONE);
+        }
 
         if (weaponsAudioSource != null)
             weaponsAudioSource.Play();

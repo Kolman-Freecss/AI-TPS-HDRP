@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotMode: 1
+  weaponSprite: {fileID: 21300000, guid: 2177525f1e6d7f942a75f59a515aa5e3, type: 3}
   WeaponType: 1
   ammoCount: 30
   ammoInClipCapacity: 30
