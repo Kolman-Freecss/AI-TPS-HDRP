@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class BarrelByRaycast : Barrel
 {
-    [SerializeField] Transform shootPoint;
+    [SerializeField] private Transform shootPoint;
     [SerializeField] private float range = 100f;
     [SerializeField] private LayerMask layerMask = Physics.DefaultRaycastLayers;
-    [SerializeField] float cadence = 10f; //Shots/s
-    [SerializeField] Vector2 dispersionAngles = new Vector2(5f, 5f);
+    [SerializeField] private float cadence = 10f; //Shots/s
+    [SerializeField] private Vector2 dispersionAngles = new(5f, 5f);
 
     [SerializeField] private GameObject tracerPrefab;
     [SerializeField] private Light pointLight;
@@ -20,12 +20,11 @@ public class BarrelByRaycast : Barrel
     [SerializeField] private GameObject noHitPrefab;
 
     // [SerializeField] private LayerMask layerMask;
-    [SerializeField] float damage = 5f;
+    [SerializeField] private float damage = 5f;
 
     private bool isContinuousShooting;
 
     private float nextShotTime = 0f;
-    private bool shooting = false;
 
     private void Update()
     {
@@ -37,28 +36,25 @@ public class BarrelByRaycast : Barrel
             spotLight.spotAngle = Mathf.Lerp(spotLight.spotAngle, 0f, 10f * Time.deltaTime);
         }
 
-        if (isContinuousShooting)
-        {
-            Shot();
-        }
+        if (isContinuousShooting) Shot();
     }
 
     public override void Shot()
     {
-        if (Time.time > nextShotTime && !shooting)
+        if (Time.time > nextShotTime && !weapon.shooting)
         {
             nextShotTime = Time.time + 1f / cadence;
-            shooting = true;
+            weapon.shooting = true;
             if (!weapon.CanShot())
             {
-                base.CantShoot();
-                shooting = false;
+                CantShoot();
+                weapon.shooting = false;
                 return;
             }
 
             base.Shot();
             Vector3 dispersedForward = DispersedForward();
-            Vector3 finalShotPosition = shootPoint.position + (dispersedForward.normalized * range);
+            Vector3 finalShotPosition = shootPoint.position + dispersedForward.normalized * range;
 
             if (Physics.Raycast(shootPoint.position,
                     dispersedForward,
@@ -90,7 +86,7 @@ public class BarrelByRaycast : Barrel
 
             Tracer tracer = tracerGo.GetComponent<Tracer>();
             tracer.Init(shootPoint.position, finalShotPosition);
-            shooting = false;
+            weapon.shooting = false;
         }
 
         IEnumerator StopMuzzleFlash()

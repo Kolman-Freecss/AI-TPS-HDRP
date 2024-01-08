@@ -30,22 +30,22 @@ public abstract class Barrel : MonoBehaviour
     //     }
     // }
 
-    private void Awake()
+    public void AssignWeapon(Weapon weaponParent)
     {
-        weapon = GetComponentInParent<Weapon>();
+        weapon = weaponParent;
     }
 
     public virtual void Shot()
     {
-        weapon.DecreaseCurrentAmmo(1);
-        weapon.PlayShotSound();
+        weapon.PlayShot();
+        if (Weapon.ShotMode.Continuous == weapon.shotMode) weapon.playWeaponShoot = false;
 
         if (weapon.BulletPrefab != null)
         {
             GameObject bullet = Instantiate(weapon.BulletPrefab, transform.position, transform.rotation);
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
 
-            Vector3 offset = (transform.right * 0.1f) + (transform.forward * 0.1f);
+            Vector3 offset = transform.right * 0.1f + transform.forward * 0.1f;
             bullet.transform.position += offset;
 
             Vector3 forceDirection = transform.up + transform.right * 0.3f;
@@ -74,15 +74,11 @@ public abstract class Barrel : MonoBehaviour
     {
         Debug.Log("Cant shoot");
         if (weapon.IsReloading())
-        {
             Debug.Log("Cant shoot, reloading");
-        }
         else if (weapon.IsCurrentAmmoEmpty())
-        {
             //TODO: Make this a setting
             //weapon.Reload();
             weapon.PlayEmptyClipSound();
-        }
     }
 
     public virtual void StartShooting()

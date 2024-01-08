@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private AudioClip shootAudioClip;
     [SerializeField] private AudioClip reloadAudioClip;
+    [SerializeField] private bool haveMagazine = false;
     [SerializeField] private AudioClip emptyClipAudioClip;
     [SerializeField] private AudioClip magazineDropAudioClip;
     [SerializeField] private GameObject bulletPrefab;
@@ -60,6 +61,9 @@ public class Weapon : MonoBehaviour
     //TODO: Remove this dependency
     [SerializeField] private CharacterController entityAnimable;
 
+    [HideInInspector] public bool shooting = false;
+    [HideInInspector] public bool playWeaponShoot = false;
+
     #endregion
 
     private void Awake()
@@ -68,6 +72,8 @@ public class Weapon : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
         weaponAnimationEvent = GetComponent<WeaponAnimationEvent>();
+
+        foreach (Barrel barrel in barrels) barrel.AssignWeapon(this);
     }
 
     private void Start()
@@ -109,8 +115,20 @@ public class Weapon : MonoBehaviour
         audioSource.PlayOneShot(emptyClipAudioClip);
     }
 
+    public void PlayShot()
+    {
+        if (!playWeaponShoot)
+        {
+            Debug.Log("PlayShot2");
+            playWeaponShoot = true;
+            DecreaseCurrentAmmo(1);
+            PlayShotSound();
+        }
+    }
+
     public void Shot()
     {
+        playWeaponShoot = false;
         foreach (Barrel barrel in barrels) barrel.Shot();
     }
 
@@ -151,6 +169,17 @@ public class Weapon : MonoBehaviour
             case "attach_magazine":
                 AttachMagazine();
                 break;
+            case "refill_one_ammo":
+                RefillOneAmmo();
+                break;
+        }
+
+        void RefillOneAmmo()
+        {
+            audioSource.PlayOneShot(reloadAudioClip);
+            animator.SetBool("Reloading", false);
+            ReduceCurrentAmmoClip();
+            IncreaseCurrentAmmo(1);
         }
 
         void DetachMagazine()
@@ -182,8 +211,16 @@ public class Weapon : MonoBehaviour
 
         void AttachMagazine()
         {
+            IncreaseAmmo();
             magazineWeapon.SetActive(true);
             Destroy(magazineHand);
+        }
+
+        void IncreaseAmmo()
+        {
+            int ammoToReload = ammoInClipCapacity - ammoCount;
+            ReduceCurrentAmmoClip();
+            IncreaseCurrentAmmo(ammoToReload);
         }
     }
 
@@ -194,11 +231,9 @@ public class Weapon : MonoBehaviour
             isReloading = true;
             if (animator != null) animator.SetTrigger("Reload");
 
-            if (audioSource != null && reloadAudioClip != null) audioSource.PlayOneShot(reloadAudioClip);
+            if (audioSource != null && reloadAudioClip != null && haveMagazine)
+                audioSource.PlayOneShot(reloadAudioClip);
 
-            int ammoToReload = ammoInClipCapacity - ammoCount;
-            ReduceCurrentAmmoClip();
-            IncreaseCurrentAmmo(ammoToReload);
             StartCoroutine(ReloadCoroutine());
         }
         else if (!HasAmmoClips())
@@ -216,6 +251,8 @@ public class Weapon : MonoBehaviour
 
         IEnumerator ReloadCoroutine()
         {
+            if (haveMagazine)
+                animator.SetBool("Reloading", true);
             yield return new WaitForSeconds(timeToReload);
             isReloading = false;
         }
