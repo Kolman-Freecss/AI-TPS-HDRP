@@ -123,4 +123,14 @@ public class EntityWeapons : MonoBehaviour
     {
         return weapons[currentWeapon];
     }
+
+    public Weapon GetWeaponByIndex(int index)
+    {
+        return weapons[index];
+    }
+
+    public int GetCurrentWeaponIndex()
+    {
+        return currentWeapon;
+    }
 }

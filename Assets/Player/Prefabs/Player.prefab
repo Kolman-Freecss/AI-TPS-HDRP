@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OnLootingClip: {fileID: 8300000, guid: c62cdf4ca77e86a49afb59a3eb910421, type: 3}
+  m_AmmoPickupClip: {fileID: 8300000, guid: c73657b0f95da1e42a43fc0f2a4ce2eb, type: 3}
   ParentActionProgressBar: {fileID: 6784869495052358084}
 --- !u!82 &6018291983898882217
 AudioSource:

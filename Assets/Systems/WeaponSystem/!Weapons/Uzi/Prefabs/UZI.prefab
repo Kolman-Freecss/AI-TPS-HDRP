@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotMode: 1
+  WeaponType: 1
   ammoCount: 30
   ammoInClipCapacity: 30
   ammoClips: 4

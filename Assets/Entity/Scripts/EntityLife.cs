@@ -90,7 +90,7 @@ public class EntityLife : MonoBehaviour
                 if (enemy)
                 {
                     enemy.enabled = false;
-                    enemy.GetComponent<Collider>().enabled = false;
+                    enemy.GetComponent<CapsuleCollider>().enabled = false;
                     entityRagdollizer.Ragdollize();
                     entityRagdollizer.Push(transform.position - offender.position, minDeathPushForce,
                         maxDeathPushForce);
