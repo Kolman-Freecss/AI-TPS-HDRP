@@ -81,6 +81,8 @@ public class EntityWeapons : MonoBehaviour
 
     public void SetCurrentWeapon(int selectedWeapon)
     {
+        if (haveWeapon)
+            weapons[currentWeapon].ResetWeaponTemp();
         for (int j = 0; j < weapons.Length; j++)
         {
             weapons[j].gameObject.SetActive(j == selectedWeapon);

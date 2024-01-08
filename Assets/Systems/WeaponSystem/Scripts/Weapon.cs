@@ -74,6 +74,16 @@ public class Weapon : MonoBehaviour
 
     #region Shot Logic
 
+    public void ResetWeaponTemp()
+    {
+        animator.speed = 0f;
+        isReloading = false;
+        animator.Rebind();
+        if (magazineHand)
+            Destroy(magazineHand);
+        animator.speed = 1f;
+    }
+
     public void PlayShotSound()
     {
         if (audioSource == null || shootAudioClip == null)
