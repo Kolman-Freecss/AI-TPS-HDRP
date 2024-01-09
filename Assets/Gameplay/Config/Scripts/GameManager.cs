@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
 
     private FinishGameDelegate m_OnFinishGame;
 
+    [HideInInspector] public int m_CurrentScore = 0;
+
     #endregion
 
     #region InitData
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
     public void InitGame()
     {
         SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameInit);
+        m_CurrentScore = 0;
         StartGame();
     }
 

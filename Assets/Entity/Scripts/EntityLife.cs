@@ -102,7 +102,10 @@ public class EntityLife : MonoBehaviour
                     if (enemyInteractable.OnInteraction.GetPersistentEventCount() == 0)
                         enemyInteractable.OnInteraction.AddListener(GameManager.Instance.m_player
                             .GetComponent<PlayerStats>().OnInteraction);
-                    enemy.GetComponent<EnemyLoot>().DropLoot();
+                    EnemyLoot el = enemy.GetComponent<EnemyLoot>();
+                    el.DropLoot();
+
+                    GameManager.Instance.m_player.GetComponent<PlayerStats>().OnEnemyDeath(el);
 
                     var parent = transform.parent;
                     Destroy(parent.gameObject, timeToDestroyEnemyAfterDeath);

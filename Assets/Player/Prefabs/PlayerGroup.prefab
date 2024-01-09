@@ -1689,6 +1689,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 490040092298998135, guid: 7e9f20c025d3edb4abbb27d60eb41f00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0008544922
+      objectReference: {fileID: 0}
     - target: {fileID: 1152669740388780576, guid: 7e9f20c025d3edb4abbb27d60eb41f00,
         type: 3}
       propertyPath: fpsCameraPivot
