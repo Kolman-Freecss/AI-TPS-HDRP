@@ -139,15 +139,15 @@ public class GameManager : MonoBehaviour
         switch (roundType)
         {
             case RoundTypes.InGame_Init:
-                // if (portalInteractable.NextRoundType == RoundTypes.InGame_Second)
-                // {
-                //     SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameSecond);
-                //     SoundManager.Instance.StartBackgroundMusic(SoundManager.BackgroundMusic.InGameSecond);
-                // }
-                // else
-                // {
-                EndGame(true);
-                // }
+                if (portalInteractable.NextRoundType == RoundTypes.InGame_Second)
+                {
+                    SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameSecond);
+                    SoundManager.Instance.StartBackgroundMusic(SoundManager.BackgroundMusic.InGameSecond);
+                }
+                else
+                {
+                    EndGame(true);
+                }
 
                 break;
             case RoundTypes.InGame_Second:
