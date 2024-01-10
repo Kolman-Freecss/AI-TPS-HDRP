@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
         {
             try
             {
-                if (isWin) m_OnLastDialogueFinish -= m_OnFinishGame.Invoke;
+                if (m_GameFinalDialogue != null && isWin) m_OnLastDialogueFinish -= m_OnFinishGame.Invoke;
 
                 m_GameWon = isWin;
                 SoundManager.Instance.StartBackgroundMusic(isWin
