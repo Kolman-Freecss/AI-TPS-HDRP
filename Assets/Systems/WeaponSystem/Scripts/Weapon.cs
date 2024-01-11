@@ -183,6 +183,19 @@ public class Weapon : MonoBehaviour
             case "refill_one_ammo":
                 RefillOneAmmo();
                 break;
+            case "refill_one_ammo_instant":
+                RefillOneAmmoInstant();
+                break;
+        }
+
+        void RefillOneAmmoInstant()
+        {
+            if (!IsAmmoFull() && HasAmmoClips())
+            {
+                audioSource.PlayOneShot(reloadAudioClip);
+                ReduceCurrentAmmoClip();
+                IncreaseCurrentAmmo(1);
+            }
         }
 
         void RefillOneAmmo()

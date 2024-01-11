@@ -7,6 +7,7 @@
         SHOTGUN,
         RIFLE,
         PISTOL,
-        MELEE
+        MELEE,
+        BAZOOKA
     }
 }

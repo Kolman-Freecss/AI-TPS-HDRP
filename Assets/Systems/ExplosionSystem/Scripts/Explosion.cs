@@ -13,24 +13,28 @@ public class Explosion : MonoBehaviour
     [SerializeField] private GameObject visualExplosionPrefab;
     [SerializeField] private float damage = 5f;
 
-    void Start()
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip explosionAudioClip;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, range, layerMask);
         foreach (Collider collider in colliders)
         {
-            if (collider.TryGetComponent<HurtBox>(out HurtBox hb))
-            {
-                hb.NotifyHit(this, damage);
-            }
+            if (collider.TryGetComponent<HurtBox>(out HurtBox hb)) hb.NotifyHit(this, damage);
 
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
-            {
                 rb.AddExplosionForce(force, transform.position, range, upwardsModifier);
-            }
         }
 
+        audioSource.PlayOneShot(explosionAudioClip);
         Instantiate(visualExplosionPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        Destroy(gameObject, 5f);
     }
 
     private void OnDrawGizmos()

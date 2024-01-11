@@ -9,14 +9,27 @@ public class BarrelByInstantiation : Barrel
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootPoint;
 
+    [SerializeField] private float cadence = 10f; //Shots/s
+
+    private float nextShotTime = 0f;
+
     public override void Shot()
     {
-        if (!weapon.CanShot())
+        if (Time.time > nextShotTime && !weapon.shooting)
         {
-            base.CantShoot();
-            return;
-        }
+            nextShotTime = Time.time + 1f / cadence;
+            weapon.shooting = true;
+            if (!weapon.CanShot())
+            {
+                CantShoot();
+                weapon.shooting = false;
+                return;
+            }
 
-        Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+            base.Shot();
+
+            Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+            weapon.shooting = false;
+        }
     }
 }

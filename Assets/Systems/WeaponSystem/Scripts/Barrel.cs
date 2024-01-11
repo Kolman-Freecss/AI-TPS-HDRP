@@ -35,9 +35,19 @@ public abstract class Barrel : MonoBehaviour
         weapon = weaponParent;
     }
 
-    public virtual void Shot()
+    protected virtual void PlayShot()
     {
         weapon.PlayShot();
+    }
+
+    protected virtual void PlayShotAudio()
+    {
+        weapon.PlayShotSound();
+    }
+
+    public virtual void Shot()
+    {
+        PlayShot();
         if (Weapon.ShotMode.Continuous == weapon.shotMode) weapon.playWeaponShoot = false;
 
         if (weapon.BulletPrefab != null)

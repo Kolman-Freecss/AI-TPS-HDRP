@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ExplodeOnEvent : MonoBehaviour
 {
-    [SerializeField] GameObject explosionPrefab;
-    HitBox hitBox;
+    [SerializeField] private GameObject explosionPrefab;
+    private HitBox hitBox;
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class ExplodeOnEvent : MonoBehaviour
         hitBox.onCollisionWithoutHit.AddListener(Explode);
     }
 
-    void Explode()
+    private void Explode()
     {
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
