@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class LifeBar : MonoBehaviour
 {
     [SerializeField] private Image lifeBarImage;
-    [SerializeField] private TextMeshPro lifeBarText;
+    [SerializeField] private TextMeshProUGUI lifeBarText;
     [SerializeField] private float lifeAnimationDuration = 0.25f;
 
     public void SetNormalizedValue(float newValue)
@@ -22,4 +22,6 @@ public class LifeBar : MonoBehaviour
     {
         lifeBarText.text = "+" + newText.ToString();
     }
+    
+    public TextMeshProUGUI LifeBarText => lifeBarText;
 }
