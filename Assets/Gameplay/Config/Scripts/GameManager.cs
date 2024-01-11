@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
     public void InitGame()
     {
-        SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameInit);
+        SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameInit, true);
         m_CurrentScore = 0;
         StartGame();
     }
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
             case RoundTypes.InGame_Init:
                 if (portalInteractable.NextRoundType == RoundTypes.InGame_Second)
                 {
-                    SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameSecond);
+                    SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameSecond, true);
                     SoundManager.Instance.StartBackgroundMusic(SoundManager.BackgroundMusic.InGameSecond);
                 }
                 else
@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
     public void FinishGameGoMenu()
     {
         SoundManager.Instance.StartBackgroundMusic(SoundManager.BackgroundMusic.Intro);
-        SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.Home);
+        SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.Home, true);
     }
 
     private void InitFinalNarration()
