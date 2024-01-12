@@ -164,7 +164,7 @@ MonoBehaviour:
   timeToReload: 2
   shootAudioClip: {fileID: 8300000, guid: e0b0af66d43ddc249a16b7e26289eab1, type: 3}
   reloadAudioClip: {fileID: 8300000, guid: 9e08b6a65f5714c42937659cf831dce1, type: 3}
-  haveMagazine: 0
+  haveMagazine: 1
   emptyClipAudioClip: {fileID: 8300000, guid: 8ee0c8f28049a7e40b5977460df70f21, type: 3}
   magazineDropAudioClip: {fileID: 8300000, guid: d1cb048c3f539f545a52270eaa6ddba6,
     type: 3}

@@ -213,6 +213,7 @@ public class Weapon : MonoBehaviour
         void DetachMagazine()
         {
             magazineHand = Instantiate(magazineWeapon, entityAnimable.GetLeftHand(), true);
+            magazineHand.GetComponent<MeshRenderer>().enabled = false;
             magazineWeapon.SetActive(false);
         }
 
@@ -220,6 +221,7 @@ public class Weapon : MonoBehaviour
         {
             GameObject droppedMagazine = Instantiate(magazineHand, magazineHand.transform.position,
                 magazineHand.transform.rotation);
+            droppedMagazine.GetComponent<MeshRenderer>().enabled = true;
             droppedMagazine.AddComponent<Rigidbody>();
             droppedMagazine.AddComponent<BoxCollider>();
             AudioSource localAudioSource = droppedMagazine.AddComponent<AudioSource>();
@@ -234,7 +236,7 @@ public class Weapon : MonoBehaviour
 
         void RefillMagazine()
         {
-            magazineHand.SetActive(true);
+            magazineHand.SetActive(false);
         }
 
         void AttachMagazine()
