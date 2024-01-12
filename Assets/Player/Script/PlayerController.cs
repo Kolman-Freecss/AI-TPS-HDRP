@@ -28,6 +28,7 @@ public class PlayerController : CharacterController
     [Header("Movement Settings")] [SerializeField]
     private float planeSpeed = 3f; // m/s
 
+    [SerializeField] private float planeSpeedStairs = 4f; // m/s
     [SerializeField] private MovementMode movementMode = MovementMode.RelativeToCamera;
     [SerializeField] private float gravity = -9.8f; // m/s^2
     [SerializeField] private float jumpSpeed = 5f; // m/s
@@ -58,6 +59,9 @@ public class PlayerController : CharacterController
     private float verticalVelocity = 0f;
     private Vector3 velocityToApply = Vector3.zero; // World
 
+    private bool previousFrameGroundCheck = false;
+    private float currentPlaneSpeed = 6f; // m/s
+
     private void Awake()
     {
         _characterController = GetComponent<UnityEngine.CharacterController>();
@@ -77,6 +81,7 @@ public class PlayerController : CharacterController
 
     private void Start()
     {
+        currentPlaneSpeed = planeSpeed;
     }
 
     private void Update()
@@ -138,13 +143,13 @@ public class PlayerController : CharacterController
             var originalMagnitude = xzMoveValueFromCamera.magnitude;
             xzMoveValueFromCamera = Vector3.ProjectOnPlane(xzMoveValueFromCamera, Vector3.up).normalized *
                                     originalMagnitude;
-            var velocity = xzMoveValueFromCamera * planeSpeed;
+            var velocity = xzMoveValueFromCamera * currentPlaneSpeed;
             velocityToApply += velocity;
         }
 
         void UpdateMovementRelativeToCharacter(Vector3 xzMoveValue)
         {
-            var velocity = xzMoveValue * planeSpeed;
+            var velocity = xzMoveValue * currentPlaneSpeed;
             velocityToApply += velocity;
         }
     }
@@ -220,7 +225,23 @@ public class PlayerController : CharacterController
 
     public override bool IsGrounded()
     {
-        return _characterController.isGrounded;
+        if (GameManager.Instance.gamePaused) previousFrameGroundCheck = _characterController.isGrounded;
+        return IsDescendingStairs() || _characterController.isGrounded ||
+               GameManager.Instance.gamePaused || previousFrameGroundCheck;
+
+        bool IsDescendingStairs()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, _characterController.height / 2f + 0.1f))
+                if (hit.collider.gameObject.CompareTag("Stairs"))
+                {
+                    currentPlaneSpeed = planeSpeedStairs;
+                    return true;
+                }
+
+            currentPlaneSpeed = planeSpeed;
+            return false;
+        }
     }
 
     public override Transform GetLeftHand()
