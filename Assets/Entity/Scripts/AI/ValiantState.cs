@@ -11,10 +11,11 @@ public class ValiantState : ShootingState
 
     protected override void PreUpdate()
     {
+        base.PreUpdate();
         UpdateGetCloserAndMoveAround();
     }
 
-    void UpdateGetCloserAndMoveAround()
+    private void UpdateGetCloserAndMoveAround()
     {
         Vector3 desiredPosition = transform.position + transform.right;
         if (Vector3.Distance(transform.position, decissionMaker.transform.position) > decissionMaker.valiantRange)

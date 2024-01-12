@@ -13,11 +13,13 @@ namespace Entity.Scripts
         private Vector3 smoothedAnimationVelocity = Vector3.zero;
         private Animator animator;
         private IEntityAnimable entityAnimable;
+        private PlayerController playerController;
 
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
             entityAnimable = GetComponent<IEntityAnimable>();
+            playerController = GetComponent<PlayerController>();
         }
 
         private void Update()
@@ -48,7 +50,7 @@ namespace Entity.Scripts
 
             animator.SetFloat("NormalizedVerticalVelocity", normalizedVerticalVelocity);
             animator.SetBool("IsGrounded", isGrounded);
-            animator.SetBool("HaveWeapon", haveWeapon);
+            if (playerController != null) animator.SetBool("HaveWeapon", haveWeapon);
         }
 
         public Animator GetAnimator()
