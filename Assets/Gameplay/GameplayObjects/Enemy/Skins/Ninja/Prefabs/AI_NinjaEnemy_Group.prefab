@@ -153,6 +153,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 589573038282110875, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: entityAnimable
+      value: 
+      objectReference: {fileID: 5137536730549345814}
     - target: {fileID: 894578583089502507, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -243,6 +248,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.548
       objectReference: {fileID: 0}
+    - target: {fileID: 3059411928229353075, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: entityAnimable
+      value: 
+      objectReference: {fileID: 5137536730549345814}
     - target: {fileID: 3147055387769512480, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -303,6 +313,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.029925577
       objectReference: {fileID: 0}
+    - target: {fileID: 5952334974149661163, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6748894468622820137, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: active
@@ -318,6 +333,11 @@ PrefabInstance:
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 8070213599928787420}
+    - target: {fileID: 7415432535597428767, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -348,6 +368,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.015995016
       objectReference: {fileID: 0}
+    - target: {fileID: 8064118172523598695, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: entityAnimable
+      value: 
+      objectReference: {fileID: 5137536730549345814}
     - target: {fileID: 8351469014748112224, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -407,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -0.032765396
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149439361098624128, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

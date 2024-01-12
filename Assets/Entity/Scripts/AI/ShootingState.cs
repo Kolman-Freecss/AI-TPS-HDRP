@@ -39,7 +39,7 @@ namespace Entity.Scripts.AI
             Weapon currentWeapon = entityWeapons.GetCurrentWeapon();
             if (!currentWeapon.HasAmmo() && currentWeapon.HasAmmoClips())
             {
-                entityWeapons.Reload();
+                if (!currentWeapon.IsReloading()) entityWeapons.Reload();
                 return;
             }
 
