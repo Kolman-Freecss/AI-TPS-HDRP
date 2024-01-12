@@ -1,5 +1,6 @@
 #region
 
+using Gameplay.Config.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using CharacterController = _3rdPartyAssets.Packages.KolmanFreecss.Systems.CharacterController.CharacterController;
@@ -59,6 +60,9 @@ public class PlayerController : CharacterController
     private float verticalVelocity = 0f;
     private Vector3 velocityToApply = Vector3.zero; // World
 
+    private EntityLife entityLife;
+    public bool meleeAttacking = false;
+
     private bool previousFrameGroundCheck = false;
     private float currentPlaneSpeed = 6f; // m/s
 
@@ -82,6 +86,13 @@ public class PlayerController : CharacterController
     private void Start()
     {
         currentPlaneSpeed = planeSpeed;
+        entityLife = GetComponent<EntityLife>();
+        entityLife.onDeath.AddListener(OnDeath);
+    }
+
+    private void OnDeath()
+    {
+        RoundManager.Instance.OnPlayerDeath();
     }
 
     private void Update()
