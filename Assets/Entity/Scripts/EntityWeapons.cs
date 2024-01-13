@@ -155,6 +155,12 @@ public class EntityWeapons : MonoBehaviour
             weaponsAudioSource.Play();
     }
 
+    public void ResetWeapon()
+    {
+        if (currentWeapon != -1 && haveWeapon)
+            weapons[currentWeapon].ResetWeaponTemp();
+    }
+
     public virtual void Reload()
     {
         if (currentWeapon != -1) weapons[currentWeapon].Reload();
