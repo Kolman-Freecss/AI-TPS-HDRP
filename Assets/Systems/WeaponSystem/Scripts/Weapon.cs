@@ -76,7 +76,7 @@ public class Weapon : MonoBehaviour
         barrels = GetComponentsInChildren<Barrel>();
         animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
-        weaponAnimationEvent = GetComponent<WeaponAnimationEvent>();
+        weaponAnimationEvent = GetComponentInChildren<WeaponAnimationEvent>();
 
         haveMagazine = magazineWeapon != null;
 

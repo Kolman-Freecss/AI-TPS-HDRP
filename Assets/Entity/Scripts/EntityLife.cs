@@ -124,6 +124,8 @@ public class EntityLife : MonoBehaviour
                     el.DropLoot();
 
                     GameManager.Instance.m_player.GetComponent<PlayerStats>().OnEnemyDeath(el);
+                    
+                    entityWeapons.DisableAllWeapons();
 
                     var parent = transform.parent;
                     Destroy(parent.gameObject, timeToDestroyEnemyAfterDeath);
