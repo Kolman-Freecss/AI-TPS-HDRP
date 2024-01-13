@@ -300,6 +300,11 @@ public class Weapon : MonoBehaviour
         ammoCount += maxAmmo;
     }
 
+    public void IncreaseClips(int clipsMount)
+    {
+        ammoClips += clipsMount;
+    }
+
     public void DecreaseCurrentAmmo(int ammoAmount)
     {
         ammoCount -= ammoAmount;
