@@ -3,6 +3,7 @@
 using Gameplay.GameplayObjects.UI;
 using Systems.WeaponSystem.Scripts;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 #endregion
 
@@ -26,13 +27,19 @@ public class EntityWeapons : MonoBehaviour
     private AudioSource weaponsAudioSource;
     private bool isPlayer = false;
 
+    private RigBuilder rigBuilder;
+
     private PlayerMeleeAttackController playerMeleeAttackController;
     private PlayerController _playerController;
+    private Enemy enemy;
 
     protected virtual void Awake()
     {
+        enemy = GetComponent<Enemy>();
         playerMeleeAttackController = GetComponent<PlayerMeleeAttackController>();
         _playerController = GetComponent<PlayerController>();
+        rigBuilder = GetComponentInChildren<RigBuilder>();
+
         if (weaponsParent != null)
         {
             weapons = weaponsParent.GetComponentsInChildren<Weapon>();
@@ -59,28 +66,34 @@ public class EntityWeapons : MonoBehaviour
     private void SetIKTargets()
     {
         bool meleeAttacking = playerMeleeAttackController != null && _playerController.meleeAttacking;
-        if (currentWeapon != -1 && !meleeAttacking)
+        bool enemyMeleeAttacking = enemy != null && !haveWeapon;
+        bool isPlayer = _playerController != null;
+        if (haveWeapon && !meleeAttacking)
         {
-            Weapon currentWeapon = weapons[this.currentWeapon];
-            if (currentWeapon.LeftHandWeaponIKTarget != null && leftHandIKTarget != null)
-                SetIKTarget(leftHandIKTarget, currentWeapon.LeftHandWeaponIKTarget);
-            if (currentWeapon.RightHandWeaponIKTarget != null && rightHandIKTarget != null)
-                SetIKTarget(rightHandIKTarget, currentWeapon.RightHandWeaponIKTarget);
-            if (currentWeapon.LeftHintWeaponIKTarget != null && leftHintIKTarget != null)
-                SetIKTarget(leftHintIKTarget, currentWeapon.LeftHintWeaponIKTarget);
-            if (currentWeapon.RightHintWeaponIKTarget != null && rightHintIKTarget != null)
-                SetIKTarget(rightHintIKTarget, currentWeapon.RightHintWeaponIKTarget);
+            rigBuilder.enabled = true;
+            if (!isPlayer && enemyMeleeAttacking) return;
+            Weapon currentWeaponTarget = weapons[currentWeapon];
+            SetTargetsToIK(leftHandIKTarget, currentWeaponTarget.LeftHandWeaponIKTarget);
+            SetTargetsToIK(rightHandIKTarget, currentWeaponTarget.RightHandWeaponIKTarget);
+            SetTargetsToIK(leftHintIKTarget, currentWeaponTarget.LeftHintWeaponIKTarget);
+            SetTargetsToIK(rightHintIKTarget, currentWeaponTarget.RightHintWeaponIKTarget);
+        }
+        else if (meleeAttacking)
+        {
+            rigBuilder.enabled = true;
+            SetTargetsToIK(leftHandIKTarget, meleeWeapon.LeftHandWeaponIKTarget);
+            SetTargetsToIK(rightHandIKTarget, meleeWeapon.RightHandWeaponIKTarget);
+            SetTargetsToIK(leftHintIKTarget, meleeWeapon.LeftHintWeaponIKTarget);
+            SetTargetsToIK(rightHintIKTarget, meleeWeapon.RightHintWeaponIKTarget);
         }
         else
         {
-            if (meleeWeapon.LeftHandWeaponIKTarget != null && leftHandIKTarget != null)
-                SetIKTarget(leftHandIKTarget, meleeWeapon.LeftHandWeaponIKTarget);
-            if (meleeWeapon.RightHandWeaponIKTarget != null && rightHandIKTarget != null)
-                SetIKTarget(rightHandIKTarget, meleeWeapon.RightHandWeaponIKTarget);
-            if (meleeWeapon.LeftHintWeaponIKTarget != null && leftHintIKTarget != null)
-                SetIKTarget(leftHintIKTarget, meleeWeapon.LeftHintWeaponIKTarget);
-            if (meleeWeapon.RightHintWeaponIKTarget != null && rightHintIKTarget != null)
-                SetIKTarget(rightHintIKTarget, meleeWeapon.RightHintWeaponIKTarget);
+            rigBuilder.enabled = false;
+        }
+
+        void SetTargetsToIK(Transform bodyTarget, Transform weaponBodyConstraint)
+        {
+            if (bodyTarget != null && weaponBodyConstraint != null) SetIKTarget(bodyTarget, weaponBodyConstraint);
         }
 
         void SetIKTarget(Transform ikConstraint, Transform weaponTarget)
@@ -97,12 +110,14 @@ public class EntityWeapons : MonoBehaviour
             weapons[i].gameObject.SetActive(false);
             weapons[i].gameObject.GetComponent<Weapon>().active = false;
         }
+
+        haveWeapon = false;
     }
 
     internal void SelectNextWeapon()
     {
         int nextWeapon = currentWeapon + 1;
-        if (nextWeapon >= weapons.Length) nextWeapon = -1;
+        if (nextWeapon >= weapons.Length) nextWeapon = 0;
 
         SetCurrentWeapon(nextWeapon);
     }

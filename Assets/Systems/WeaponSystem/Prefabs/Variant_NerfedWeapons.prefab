@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 8896740737888224914, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
       propertyPath: m_Name
-      value: NerfedWeapons Variant
+      value: Variant_NerfedWeapons
       objectReference: {fileID: 0}
     - target: {fileID: 8904935567277385123, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
