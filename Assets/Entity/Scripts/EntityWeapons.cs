@@ -110,7 +110,7 @@ public class EntityWeapons : MonoBehaviour
     internal void SelectPreviousWeapon()
     {
         int prevWeapon = currentWeapon - 1;
-        if (prevWeapon < -1) prevWeapon = weapons.Length - 1;
+        if (prevWeapon <= -1) prevWeapon = weapons.Length - 1;
 
         SetCurrentWeapon(prevWeapon);
     }

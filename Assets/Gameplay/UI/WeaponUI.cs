@@ -38,7 +38,7 @@ namespace Gameplay.GameplayObjects.UI
         {
             WeaponUIWrapper weaponUIWrapper = Instantiate(weaponPrefab, transform);
             weaponUIWrapper.weaponSprite.sprite = weapon.WeaponSprite;
-            weaponUIWrapper.index.text = weaponUIWrappers.Count.ToString();
+            weaponUIWrapper.index.text = (weaponUIWrappers.Count + 1).ToString();
             weaponUIWrapper.weaponIndex = index;
             weaponUIWrappers.Add(
                 new SerializableDictionaryEntry<WeaponType, WeaponUIWrapper>(weapon.WeaponType, weaponUIWrapper));
