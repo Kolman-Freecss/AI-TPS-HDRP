@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: InitRound_NarrationLine_2 4
   m_EditorClassIdentifier: 
   m_Speaker: {fileID: 11400000, guid: 62df607dd4cb5284e81ccac9ccba2b0c, type: 2}
-  m_Text: (What's wrong with his face... is it a mask?)
+  m_Text: Fight for your Shogun! And don't forget to take the portal to the palace
+    when you finish here.

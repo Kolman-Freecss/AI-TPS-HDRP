@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SecondRound_NarrationLine_2
   m_EditorClassIdentifier: 
   m_Speaker: {fileID: 11400000, guid: 62df607dd4cb5284e81ccac9ccba2b0c, type: 2}
-  m_Text: You should have die already
+  m_Text: It seems that near here they have put new curses... damn them

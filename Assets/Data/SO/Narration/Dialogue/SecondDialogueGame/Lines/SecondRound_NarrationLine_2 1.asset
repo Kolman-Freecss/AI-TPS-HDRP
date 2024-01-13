@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SecondRound_NarrationLine_2 1
   m_EditorClassIdentifier: 
   m_Speaker: {fileID: 11400000, guid: 62df607dd4cb5284e81ccac9ccba2b0c, type: 2}
-  m_Text: I'll make sure this time is the last
+  m_Text: Be careful, there are many lurking around here.
