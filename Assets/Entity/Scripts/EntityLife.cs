@@ -79,7 +79,7 @@ public class EntityLife : MonoBehaviour
     {
         if (currentLife > 0f)
         {
-            currentLife -= 1f;
+            currentLife -= damage;
             if (lifeBar.LifeBarText != null)
                 lifeBar.SetText(currentLife);
             lifeBar.SetNormalizedValue(Mathf.Clamp01(currentLife / maxLife));
@@ -113,6 +113,7 @@ public class EntityLife : MonoBehaviour
                     entityRagdollizer.Push(transform.position - offender.position, minDeathPushForce,
                         maxDeathPushForce);
 
+                    enemy.gameObject.layer = LayerMask.NameToLayer("EnemyInteractable");
                     enemy.GetComponent<SphereCollider>().enabled = true;
                     EnemyInteractable enemyInteractable = enemy.GetComponent<EnemyInteractable>();
                     enemyInteractable.enabled = true;

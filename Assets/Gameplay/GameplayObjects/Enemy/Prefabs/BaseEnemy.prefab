@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponsParent: {fileID: 0}
   startingWeaponIndex: 0
+  meleeWeapon: {fileID: 0}
   leftHandIKTarget: {fileID: 0}
   rightHandIKTarget: {fileID: 0}
   leftHintIKTarget: {fileID: 0}
