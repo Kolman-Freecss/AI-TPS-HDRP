@@ -90,6 +90,15 @@ public class EntityWeapons : MonoBehaviour
         }
     }
 
+    public void DisableAllWeapons()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].gameObject.SetActive(false);
+            weapons[i].gameObject.GetComponent<Weapon>().active = false;
+        }
+    }
+
     internal void SelectNextWeapon()
     {
         int nextWeapon = currentWeapon + 1;

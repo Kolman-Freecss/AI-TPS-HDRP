@@ -29,6 +29,8 @@ public class EntityLife : MonoBehaviour
     private LifeBar lifeBar;
     private Enemy enemy;
 
+    private EntityWeapons entityWeapons;
+
     public UnityEvent onDeath = new();
 
     private void OnValidate()
@@ -42,6 +44,7 @@ public class EntityLife : MonoBehaviour
 
     private void Awake()
     {
+        entityWeapons = GetComponent<EntityWeapons>();
         currentLife = maxLife;
         hurtBox = GetComponent<HurtBox>();
         entityRagdollizer = GetComponentInChildren<EntityRagdollizer>();
@@ -82,12 +85,16 @@ public class EntityLife : MonoBehaviour
             lifeBar.SetNormalizedValue(Mathf.Clamp01(currentLife / maxLife));
             if (currentLife <= 0f)
             {
-                animator.enabled = false;
+                if (!playerController)
+                    animator.enabled = false;
 
                 if (navMeshAgent) navMeshAgent.enabled = false;
 
                 if (playerController)
                 {
+                    GetComponent<FPSCameraController>().enabled = false;
+                    entityWeapons.DisableAllWeapons();
+                    animator.SetTrigger("DeathAction");
                     playerController.enabled = false;
                     onDeath.Invoke();
                 }
