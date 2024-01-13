@@ -92,23 +92,34 @@ public class GameManager : MonoBehaviour
 
     #region Logic
 
-    public void InitGame()
+    public void InitGame(SceneTransitionHandler.SceneStates sceneState)
     {
-        SceneTransitionHandler.Instance.LoadScene(SceneTransitionHandler.SceneStates.InGameInit, true);
+        SceneTransitionHandler.Instance.LoadScene(sceneState, true);
         m_CurrentScore = 0;
-        StartGame();
+        StartGame(sceneState);
     }
 
-    public void StartGame()
+    public void StartGame(SceneTransitionHandler.SceneStates sceneState)
     {
-        SoundManager.Instance.StartBackgroundMusic(SoundManager.BackgroundMusic.InGameInit);
+        SoundManager.BackgroundMusic backgroundMusic = SoundManager.BackgroundMusic.InGameInit;
+        switch (sceneState)
+        {
+            case SceneTransitionHandler.SceneStates.InGameInit:
+                backgroundMusic = SoundManager.BackgroundMusic.InGameInit;
+                break;
+            case SceneTransitionHandler.SceneStates.InGameSecond:
+                backgroundMusic = SoundManager.BackgroundMusic.InGameSecond;
+                break;
+        }
+
+        SoundManager.Instance.StartBackgroundMusic(backgroundMusic);
         IsGameStarted = true;
         OnGameStarted?.Invoke();
     }
 
     public void RestartGame()
     {
-        InitGame();
+        InitGame(SceneTransitionHandler.SceneStates.InGameInit);
     }
 
     public void PauseGameEvent(bool mIsPaused)
