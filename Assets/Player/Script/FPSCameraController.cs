@@ -1,5 +1,6 @@
 #region
 
+using _3rdPartyAssets.Packages.KolmanFreecss.Systems.PlayerUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,22 +22,17 @@ public class FPSCameraController : MonoBehaviour
     private void Update()
     {
         Vector2 aimDelta = aim.action.ReadValue<Vector2>();
-        transform.Rotate(Vector3.up, aimDelta.x * horizontalAngularSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up,
+            aimDelta.x * horizontalAngularSpeed * ClientPrefs.GetSensitivityX() * Time.deltaTime);
 
         float currentAngle = Vector3.SignedAngle(transform.forward, fpsCameraPivot.forward, transform.right);
-        float rotationToApply = aimDelta.y * verticalAngularSpeed * Time.deltaTime;
+        float rotationToApply = aimDelta.y * verticalAngularSpeed * ClientPrefs.GetSensitivityY() * Time.deltaTime;
         if (currentAngle + rotationToApply > maxVerticalAngle)
-        {
             fpsCameraPivot.Rotate(Vector3.right, maxVerticalAngle - currentAngle);
-        }
         else if (currentAngle + rotationToApply < -maxVerticalAngle)
-        {
             fpsCameraPivot.Rotate(Vector3.right, -(currentAngle + maxVerticalAngle));
-        }
         else
-        {
             fpsCameraPivot.Rotate(Vector3.right, rotationToApply);
-        }
     }
 
     private void OnDisable()
