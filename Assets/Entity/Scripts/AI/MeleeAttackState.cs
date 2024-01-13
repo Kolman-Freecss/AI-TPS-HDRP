@@ -12,6 +12,7 @@ public class MeleeAttackState : AIState
 
     public override void Enter()
     {
+        entityWeapons.DisableAllWeapons();
     }
 
     private void Update()

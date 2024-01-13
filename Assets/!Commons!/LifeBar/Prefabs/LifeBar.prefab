@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeBarImage: {fileID: 3005731757500797221}
+  lifeBarText: {fileID: 0}
   lifeAnimationDuration: 0.25
 --- !u!1 &4885863849850146983
 GameObject:
@@ -240,8 +241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.8, y: -7.8}
-  m_SizeDelta: {x: 680, y: 47}
+  m_AnchoredPosition: {x: -8.8, y: -15.65}
+  m_SizeDelta: {x: 680, y: 31.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3252306426806240989
 CanvasRenderer:
