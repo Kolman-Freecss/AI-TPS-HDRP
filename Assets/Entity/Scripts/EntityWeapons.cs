@@ -10,6 +10,7 @@ public class EntityWeapons : MonoBehaviour
 {
     [SerializeField] private Transform weaponsParent;
     [SerializeField] private int startingWeaponIndex = 0;
+    [SerializeField] private MeleeWeapon meleeWeapon;
 
     [Header("IK Constraints Settings")] [SerializeField]
     private Transform leftHandIKTarget;
@@ -25,8 +26,13 @@ public class EntityWeapons : MonoBehaviour
     private AudioSource weaponsAudioSource;
     private bool isPlayer = false;
 
+    private PlayerMeleeAttackController playerMeleeAttackController;
+    private PlayerController _playerController;
+
     protected virtual void Awake()
     {
+        playerMeleeAttackController = GetComponent<PlayerMeleeAttackController>();
+        _playerController = GetComponent<PlayerController>();
         if (weaponsParent != null)
         {
             weapons = weaponsParent.GetComponentsInChildren<Weapon>();
@@ -52,7 +58,8 @@ public class EntityWeapons : MonoBehaviour
 
     private void SetIKTargets()
     {
-        if (currentWeapon != -1)
+        bool meleeAttacking = playerMeleeAttackController != null && _playerController.meleeAttacking;
+        if (currentWeapon != -1 && !meleeAttacking)
         {
             Weapon currentWeapon = weapons[this.currentWeapon];
             if (currentWeapon.LeftHandWeaponIKTarget != null && leftHandIKTarget != null)
@@ -63,6 +70,17 @@ public class EntityWeapons : MonoBehaviour
                 SetIKTarget(leftHintIKTarget, currentWeapon.LeftHintWeaponIKTarget);
             if (currentWeapon.RightHintWeaponIKTarget != null && rightHintIKTarget != null)
                 SetIKTarget(rightHintIKTarget, currentWeapon.RightHintWeaponIKTarget);
+        }
+        else
+        {
+            if (meleeWeapon.LeftHandWeaponIKTarget != null && leftHandIKTarget != null)
+                SetIKTarget(leftHandIKTarget, meleeWeapon.LeftHandWeaponIKTarget);
+            if (meleeWeapon.RightHandWeaponIKTarget != null && rightHandIKTarget != null)
+                SetIKTarget(rightHandIKTarget, meleeWeapon.RightHandWeaponIKTarget);
+            if (meleeWeapon.LeftHintWeaponIKTarget != null && leftHintIKTarget != null)
+                SetIKTarget(leftHintIKTarget, meleeWeapon.LeftHintWeaponIKTarget);
+            if (meleeWeapon.RightHintWeaponIKTarget != null && rightHintIKTarget != null)
+                SetIKTarget(rightHintIKTarget, meleeWeapon.RightHintWeaponIKTarget);
         }
 
         void SetIKTarget(Transform ikConstraint, Transform weaponTarget)
