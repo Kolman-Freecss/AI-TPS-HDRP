@@ -61,6 +61,8 @@ public class Weapon : MonoBehaviour
     //TODO: Remove this dependency
     [SerializeField] private CharacterController entityAnimable;
 
+    public CharacterController EntityAnimable => entityAnimable;
+
     [HideInInspector] public bool shooting = false;
 
     //TODO: Shit aux variables for shotbyshot

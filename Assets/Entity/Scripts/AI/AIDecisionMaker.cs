@@ -47,6 +47,9 @@ namespace Entity.Scripts.AI
         private Vector3 lastPerceivedPosition;
         private bool hasLastPerceivedPosition;
 
+        private bool damaged = false;
+        private Transform offender;
+
         private void Awake()
         {
             aiStates = GetComponents<AIState>();
@@ -75,9 +78,16 @@ namespace Entity.Scripts.AI
 
         private void Start()
         {
+            entityLife.OnDamageTaken += DamageTaken;
             foreach (AIState s in aiStates) s.decissionMaker = this;
 
             SetState(startState);
+        }
+
+        private void DamageTaken(Transform offender)
+        {
+            damaged = true;
+            this.offender = offender;
         }
 
         private void Update()
@@ -88,6 +98,9 @@ namespace Entity.Scripts.AI
                 return;
             }
 
+
+            bool canSeeTarget = false;
+            bool canHearTarget = false;
             // Choose target
             Transform visibleTarget = entitySight.visiblesInSight.Find((x) => x.GetAllegiance() != GetAllegiance())
                 ?.GetTransform();
@@ -99,21 +112,28 @@ namespace Entity.Scripts.AI
                     ?.audible.transform;
 
             target = null;
-            if (!visibleTarget)
-                target = audibleTarget;
-            else if (audibleTarget)
-                target = Vector3.Distance(visibleTarget.position, transform.position) <
-                         Vector3.Distance(audibleTarget.position, transform.position)
-                    ? visibleTarget
-                    : audibleTarget;
+            if (damaged)
+            {
+                target = offender;
+            }
             else
-                target = visibleTarget;
+            {
+                if (!visibleTarget)
+                    target = audibleTarget;
+                else if (audibleTarget)
+                    target = Vector3.Distance(visibleTarget.position, transform.position) <
+                             Vector3.Distance(audibleTarget.position, transform.position)
+                        ? visibleTarget
+                        : audibleTarget;
+                else
+                    target = visibleTarget;
+            }
 
             // Can see target? Can hear target?
-            bool canSeeTarget = entitySight.visiblesInSight.Find(
+            canSeeTarget = entitySight.visiblesInSight.Find(
                 (x) => x.GetTransform() == target) != null;
 
-            bool canHearTarget = entityAudition.heardAudibles.Find(
+            canHearTarget = entityAudition.heardAudibles.Find(
                 (x) => x.audible.transform == target) != null;
 
             EntityLife targetEntityLife = target ? target.GetComponent<EntityLife>() : null;
@@ -191,6 +211,11 @@ namespace Entity.Scripts.AI
 
                 currentState = newState;
             }
+        }
+
+        private void OnDisable()
+        {
+            entityLife.OnDamageTaken -= DamageTaken;
         }
 
         public Transform GetTransform()
