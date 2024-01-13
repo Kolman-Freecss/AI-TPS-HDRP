@@ -63,6 +63,15 @@ public class EntityLife : MonoBehaviour
         hurtBox.onHitNotifiedWithOffender.RemoveListener(OnHitNotifiedWithOffender);
     }
 
+    public void IncreaseLife(int lifeToRestore)
+    {
+        currentLife += lifeToRestore;
+        if (currentLife > maxLife)
+            currentLife = maxLife;
+        lifeBar.SetNormalizedValue(Mathf.Clamp01(currentLife / maxLife));
+        lifeBar.SetText(currentLife);
+    }
+
     private void OnHitNotifiedWithOffender(float damage, Transform offender)
     {
         if (currentLife > 0f)
