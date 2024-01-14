@@ -15,25 +15,18 @@ public class CombatZone : MonoBehaviour
 
     private void Start()
     {
-        foreach (Enemy enemy in enemies)
-        {
-            enemy.gameObject.SetActive(false);
-        }
+        foreach (Enemy enemy in enemies) enemy.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         foreach (Enemy enemy in enemies)
-        {
             enemy.gameObject.SetActive(true);
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         foreach (Enemy enemy in enemies)
-        {
             enemy.gameObject.SetActive(false);
-        }
     }
 }
