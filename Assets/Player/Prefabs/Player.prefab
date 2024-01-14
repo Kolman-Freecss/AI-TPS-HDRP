@@ -233,7 +233,7 @@ MonoBehaviour:
   fpsCameraPivot: {fileID: 0}
   horizontalAngularSpeed: 10
   verticalAngularSpeed: -10
-  maxVerticalAngle: 85
+  maxVerticalAngle: 55
 --- !u!114 &6268134300088140483
 MonoBehaviour:
   m_ObjectHideFlags: 0
