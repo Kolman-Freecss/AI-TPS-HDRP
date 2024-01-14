@@ -2193,6 +2193,16 @@ PrefabInstance:
       propertyPath: orientationTarget
       value: 
       objectReference: {fileID: 5062325564296722791}
+    - target: {fileID: 9100987695720893020, guid: 7e9f20c025d3edb4abbb27d60eb41f00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 196.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100987695720893020, guid: 7e9f20c025d3edb4abbb27d60eb41f00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31.599976
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
