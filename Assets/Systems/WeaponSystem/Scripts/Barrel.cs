@@ -71,7 +71,6 @@ public abstract class Barrel : MonoBehaviour
             || (weapon.Animator != null && weapon.shotMode == Weapon.ShotMode.ShotByShot &&
                 !weapon.playWeaponShotByShot))
         {
-            Debug.Log("Shot animation");
             weapon.playWeaponShotByShot = true;
             weapon.Animator.SetTrigger("Shoot");
         }
@@ -85,7 +84,6 @@ public abstract class Barrel : MonoBehaviour
 
     protected void CantShoot()
     {
-        Debug.Log("Cant shoot");
         if (weapon.IsReloading())
             Debug.Log("Cant shoot, reloading");
         else if (weapon.IsCurrentAmmoEmpty())
