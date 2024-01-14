@@ -2259,6 +2259,21 @@ PrefabInstance:
       propertyPath: damage
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 564098891422028639, guid: a2ba6710dcbf5074294df42507cb3deb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 564098891422028639, guid: a2ba6710dcbf5074294df42507cb3deb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.051
+      objectReference: {fileID: 0}
+    - target: {fileID: 564098891422028639, guid: a2ba6710dcbf5074294df42507cb3deb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.399
+      objectReference: {fileID: 0}
     - target: {fileID: 1234586192220743379, guid: a2ba6710dcbf5074294df42507cb3deb,
         type: 3}
       propertyPath: damage

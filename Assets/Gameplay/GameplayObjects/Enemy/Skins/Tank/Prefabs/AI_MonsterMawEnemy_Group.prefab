@@ -119,6 +119,11 @@ PrefabInstance:
       propertyPath: entityAnimable
       value: 
       objectReference: {fileID: 1207771702814292822}
+    - target: {fileID: 613710041900356771, guid: ce14c101f64e15c43b153cee3c9606f0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.213
+      objectReference: {fileID: 0}
     - target: {fileID: 949323946017694459, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,12 +317,12 @@ PrefabInstance:
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.000000020489097
+      value: 0.00000014773104
       objectReference: {fileID: 0}
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.11999983
+      value: -0.119999774
       objectReference: {fileID: 0}
     - target: {fileID: 7682293554745484600, guid: ce14c101f64e15c43b153cee3c9606f0,
         type: 3}

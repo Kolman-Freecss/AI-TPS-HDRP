@@ -64,7 +64,7 @@ namespace Entity.Scripts.AI
             angleToApply = Mathf.Min(angleToApply, Mathf.Abs(angularDistance));
             angleToApply *= Mathf.Sign(angularDistance);
             Quaternion rotationToApply = Quaternion.AngleAxis(angleToApply, Vector3.up);
-            OrientateWeaponYAxe();
+            // OrientateWeaponYAxe();
             transform.rotation = transform.rotation * rotationToApply;
         }
 

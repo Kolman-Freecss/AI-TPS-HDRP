@@ -23,6 +23,7 @@ public class CombatZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (triggered) return;
         foreach (Enemy enemy in enemies)
             enemy.gameObject.SetActive(true);
         triggered = true;
