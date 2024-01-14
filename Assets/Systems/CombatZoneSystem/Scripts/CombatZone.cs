@@ -8,6 +8,8 @@ public class CombatZone : MonoBehaviour
 {
     private Enemy[] enemies;
 
+    private bool triggered;
+
     private void Awake()
     {
         enemies = GetComponentsInChildren<Enemy>();
@@ -15,6 +17,7 @@ public class CombatZone : MonoBehaviour
 
     private void Start()
     {
+        triggered = false;
         foreach (Enemy enemy in enemies) enemy.gameObject.SetActive(false);
     }
 
@@ -22,11 +25,6 @@ public class CombatZone : MonoBehaviour
     {
         foreach (Enemy enemy in enemies)
             enemy.gameObject.SetActive(true);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        foreach (Enemy enemy in enemies)
-            enemy.gameObject.SetActive(false);
+        triggered = true;
     }
 }
