@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: InitRound_NarrationLine_1
   m_EditorClassIdentifier: 
   m_Speaker: {fileID: 11400000, guid: 62df607dd4cb5284e81ccac9ccba2b0c, type: 2}
-  m_Text: Kenji! We need you to eliminate the enemies
+  m_Text: Kenji! We need you to eliminate the enemies. HEAR ME CAREFULLY or you won't
+    find what we need
